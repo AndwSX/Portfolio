@@ -25,9 +25,8 @@ export default function AboutSection() {
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Andres Ortiz</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Estudiante de Inteligencia Artificial en sus últimos semestres en la
-                  Universidad Autónoma del Estado de Morelos (UAEM). Apasionado por la
-                  programación, el desarrollo web y la ciencia de datos.
+                  Tecnólogo en formación del programa ADSO del SENA, próximo a finalizar mi etapa práctica.
+                   Apasionado por la programación, el desarrollo web y la creación de soluciones que integran lógica, datos y funcionalidad.
                 </p>
               </div>
 

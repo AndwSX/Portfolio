@@ -69,3 +69,21 @@ html {
 .loading-text {
   animation: fadeInScale 1s ease-out;
 }
+
+.animate-float-subtle {
+  animation: floatSubtle 6s ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+@keyframes floatSubtle {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+

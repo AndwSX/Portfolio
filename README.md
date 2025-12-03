@@ -126,22 +126,6 @@ npm run start    # Inicia el servidor de producción
 npm run lint     # Ejecuta el linter
 ```
 
-## 🌐 Despliegue
-
-### Vercel (Recomendado)
-
-1. Sube tu código a GitHub
-2. Conecta tu repositorio en [Vercel](https://vercel.com)
-3. Despliega automáticamente
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/tu-usuario/portfolio-nextjs)
-
-### Otras plataformas
-
-- **Netlify**: Conecta tu repositorio y despliega
-- **GitHub Pages**: Usa `next export` para generar sitio estático
-- **Railway/Render**: Despliega con Docker o directamente
-
 ## 🧰 Tecnologías Utilizadas
 
 - **Framework**: [Next.js 14](https://nextjs.org/)

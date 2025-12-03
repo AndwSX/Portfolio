@@ -1,9 +1,50 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import SocialLinks from '@/components/ui/SocialLinks'
-import Image from 'next/image'
 
 export default function HeroSection() {
+  const [displayText, setDisplayText] = useState("")
+  const [textIndex, setTextIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+  
+  const texts = [
+    "import { Innovation } from 'creativity';",
+    "const developer = new AIEngineer();",
+    "console.log('Building the future...');",
+    "const passion = AI + WebDev + Design;",
+  ]
+
+  useEffect(() => {
+    const currentText = texts[textIndex]
+    
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        // Escribiendo
+        if (charIndex < currentText.length) {
+          setDisplayText(currentText.slice(0, charIndex + 1))
+          setCharIndex(charIndex + 1)
+        } else {
+          // Terminó de escribir, espera y luego empieza a borrar
+          setTimeout(() => setIsDeleting(true), 2000)
+        }
+      } else {
+        // Borrando
+        if (charIndex > 0) {
+          setDisplayText(currentText.slice(0, charIndex - 1))
+          setCharIndex(charIndex - 1)
+        } else {
+          // Terminó de borrar, pasa al siguiente texto
+          setIsDeleting(false)
+          setTextIndex((textIndex + 1) % texts.length)
+        }
+      }
+    }, isDeleting ? 50 : 100)
+
+    return () => clearTimeout(timer)
+  }, [charIndex, isDeleting, textIndex, texts])
+
   return (
     <section id="inicio" className="min-h-screen flex items-center justify-center px-4 pt-24 pb-16">
       <div className="container max-w-7xl mx-auto">
@@ -13,17 +54,20 @@ export default function HeroSection() {
               <h1 className="text-5xl lg:text-7xl font-bold font-display">
                 Hola, soy <span className="gradient-text">Andrés</span>
               </h1>
-              <div className="glass inline-block px-6 py-3 rounded-2xl">
-                <p className="text-xl lg:text-2xl font-medium text-gray-600 dark:text-gray-400">
-                  Inteligencia Artificial |
-                </p>
+              
+              {/* Terminal con efecto de escritura */}
+              <div className="glass inline-flex items-center gap-2 font-mono text-sm px-4 py-3 rounded-2xl border border-gray-300/50 dark:border-gray-700/50">
+                <i className="ri-terminal-line text-cyan-500"></i>
+                <span className="min-h-[20px]">
+                  {displayText}
+                  <span className="text-cyan-500 animate-[pulse_1s_ease-in-out_infinite]">|</span>
+                </span>
               </div>
             </div>
             
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
-              Soy estudiante de <span className="font-semibold text-gray-900 dark:text-gray-100">Inteligencia Artificial</span> y desarrollador
-              web. Me apasiona crear, aprender y llevar mis ideas a la
-              realidad a través de la programación y creatividad.
+              Soy un <span className="font-semibold text-gray-900 dark:text-gray-100">desarrollador en constante evolución,</span> apasionado por aprender, 
+              crear y transformar ideas en proyectos reales. Disfruto enfrentar desafíos, analizar problemas y convertirlos en soluciones claras y bien pensadas.
             </p>
             
             <div className="flex flex-wrap gap-4">
