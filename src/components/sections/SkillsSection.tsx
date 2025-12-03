@@ -11,7 +11,7 @@ export default function SkillsSection() {
         {/* Header */}
         <div className="text-center mb-16 animate-stagger">
           <h2 className="text-4xl lg:text-5xl font-bold font-display mb-4 gradient-text">
-            Mis <span className="text-cyan-500">Habilidades</span>
+            Mis <span className="text-cyan-500">Habilidades </span> Técnicas
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
             Tecnologías y herramientas con las que trabajo

@@ -24,7 +24,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'acerca', label: 'Acerca', icon: 'ri-user-line' },
   { id: 'skills', label: 'Habilidades', icon: 'ri-tools-line' },
   { id: 'proyectos', label: 'Proyectos', icon: 'ri-folder-line' },
-  { id: 'servicios', label: 'Experiencia', icon: 'ri-tools-line' },
+  { id: 'servicios', label: 'Experiencia', icon: 'ri-briefcase-line' },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
