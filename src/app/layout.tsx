@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Andres Ortiz - Portfolio UX/UI Developer',
+  title: 'Andres Ortiz - Portfolio',
   description: 'Portfolio profesional de Andres Ortiz, estudiante de Inteligencia Artificial y desarrollador web especializado en React, TypeScript y Machine Learning.',
 }
 

@@ -9,7 +9,7 @@ export default function Navigation() {
   const activeSection = useActiveSection()
 
   return (
-    <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 animate-fade-in">
+    <nav className="fixed sm:top-2 md:top-8 left-1/2 -translate-x-1/2 z-50 animate-fade-in">
       <div className="glass-strong rounded-full shadow-lg px-2 py-2 flex items-center gap-2">
         {NAV_ITEMS.map((item) => (
           <button

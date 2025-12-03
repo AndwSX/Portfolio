@@ -1,11 +1,30 @@
-import { NavItem, Project, Service, SocialLink } from './types';
+import { NavItem, Project, Service, SocialLink, Skill } from './types';
+import { Code2, Database, Palette } from "lucide-react";
+import {
+  JavaScriptIcon,
+  TypeScriptIcon,
+  ReactIcon,
+  VueIcon,
+  NodeIcon,
+  PythonIcon,
+  TailwindIcon,
+  GitIcon,
+  DockerIcon,
+  FigmaIcon,
+  NextJSIcon,
+  PostgreSQLIcon,
+  AWSIcon,
+  MongoDBIcon,
+  GraphQLIcon,
+  RedisIcon,
+} from "@/components/ui/icons/TechIcons";
 
 export const NAV_ITEMS: NavItem[] = [
   { id: 'inicio', label: 'Inicio', icon: 'ri-home-line' },
   { id: 'acerca', label: 'Acerca', icon: 'ri-user-line' },
   { id: 'skills', label: 'Habilidades', icon: 'ri-tools-line' },
   { id: 'proyectos', label: 'Proyectos', icon: 'ri-folder-line' },
-  { id: 'servicios', label: 'Experiencia', icon: 'ri-tools-line' },
+  { id: 'servicios', label: 'Experiencia', icon: 'ri-briefcase-line' },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -18,11 +37,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: 'Penguin Academy',
+    title: 'Diventracker',
     description: 'Plataforma educativa especializada en Inteligencia Artificial, programación y matemáticas aplicadas.',
     icon: 'ri-graduation-cap-fill',
     gradient: 'from-green-400 to-cyan-500',
-    tags: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
+    tags: ['Python', 'FastAPI', 'AJAX', 'Tailwind'],
     delay: '0s'
   },
   {
@@ -72,7 +91,24 @@ export const SERVICES: Service[] = [
   }
 ];
 
-export const SKILLS = [
-  'Python', 'AI/ML', 'PyTorch', 'TypeScript', 
-  'React', 'Node.js', 'Git', 'TailwindCSS'
+export const SKILLS: Skill[] = [
+  { name: "JavaScript", icon: JavaScriptIcon, color: "50 100% 50%" },
+  { name: "TypeScript", icon: TypeScriptIcon, color: "211 60% 48%" },
+  { name: "Python", icon: PythonIcon, color: "207 51% 52%" },
+  { name: "React", icon: ReactIcon, color: "193 95% 68%" },
+  { name: "Next.js", icon: NextJSIcon, color: "0 0% 80%" },
+  { name: "Vue.js", icon: VueIcon, color: "153 47% 49%" },
+  { name: "Node.js", icon: NodeIcon, color: "120 25% 45%" },
+  { name: "Tailwind", icon: TailwindIcon, color: "193 95% 68%" },
+  { name: "PostgreSQL", icon: PostgreSQLIcon, color: "211 60% 48%" },
+  { name: "MongoDB", icon: MongoDBIcon, color: "120 35% 45%" },
+  { name: "Redis", icon: RedisIcon, color: "0 68% 52%" },
+  { name: "GraphQL", icon: GraphQLIcon, color: "319 100% 44%" },
+  { name: "Docker", icon: DockerIcon, color: "201 91% 59%" },
+  { name: "AWS", icon: AWSIcon, color: "33 100% 50%" },
+  { name: "Git", icon: GitIcon, color: "14 100% 57%" },
+  { name: "Figma", icon: FigmaIcon, color: "302 59% 65%" },
+  { name: "HTML/CSS", icon: Code2, color: "14 100% 57%" },
+  { name: "SQL", icon: Database, color: "199 89% 48%" },
+  { name: "UI/UX", icon: Palette, color: "280 80% 60%" },
 ];

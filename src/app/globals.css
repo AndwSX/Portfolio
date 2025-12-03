@@ -37,6 +37,67 @@
     background: linear-gradient(135deg, transparent, rgba(6, 182, 212, 0.05), transparent);
     background-size: 200% 200%;
   }
+  /* Terminal window top dots */
+  .code-dot-red {
+    @apply bg-red-500/60;
+  }
+
+  .code-dot-yellow {
+    @apply bg-yellow-500/60;
+  }
+
+  .code-dot-green {
+    @apply bg-green-500/60;
+  }
+
+  /* Background for the "server.js" window */
+  .code-card {
+    @apply glass-strong rounded-2xl border border-white/20 shadow-xl;
+  }
+
+  /* Top bar background */
+  .code-header {
+    @apply bg-white/5 dark:bg-black/20 border-b border-white/20 flex items-center gap-2 px-4 py-3;
+  }
+
+  /* File label */
+  .code-filename {
+    @apply text-xs text-white/60 font-mono ml-2;
+  }
+
+  /* Code text colors */
+  .code-primary {
+    @apply text-cyan-400;
+  }
+
+  .code-muted {
+    @apply text-white/50;
+  }
+
+  .code-chart-1 {
+    @apply text-slate-300;
+  }
+
+  .code-chart-2 {
+    @apply text-slate-400;
+  }
+
+  .code-chart-3 {
+    @apply text-slate-500;
+  }
+
+  .code-chart-4 {
+    @apply text-slate-300;
+  }
+
+  .code-chart-5 {
+    @apply text-slate-200;
+  }
+
+  /* Status string */
+  .code-string {
+    @apply text-purple-400;
+  }
 }
 
 /* Smooth scrolling */
