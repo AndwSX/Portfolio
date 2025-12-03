@@ -26,7 +26,7 @@ export default function AboutSection() {
                 <h3 className="text-2xl font-semibold mb-2">Andres Ortiz</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Tecnólogo en formación del programa ADSO del SENA, próximo a finalizar mi etapa práctica.
-                   Apasionado por la programación, el desarrollo web y la creación de soluciones que integran lógica, datos y funcionalidad.
+                  Apasionado por la programación, el desarrollo web y la creación de soluciones que integran lógica, datos y funcionalidad.
                 </p>
               </div>
 
@@ -36,8 +36,8 @@ export default function AboutSection() {
                   Educación
                 </h4>
                 <div>
-                  <p className="font-medium">Universidad Autónoma del Estado de Morelos (UAEM)</p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Licenciatura en Inteligencia Artificial</p>
+                  <p className="font-medium">SENA Centro de Diseño y Metrología</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">Análisis y Desarrollo de Software</p>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">Actualmente estudiando</p>
                 </div>
               </div>
@@ -62,12 +62,12 @@ export default function AboutSection() {
                   Habilidades Técnicas
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {SKILLS.map((skill) => (
+                  {SKILLS.map((skill, index) => (
                     <span
-                      key={skill}
+                      key={skill.name}  // Usa un identificador único como 'name'
                       className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-xl text-sm font-medium transition-all duration-300 hover:scale-105 hover:bg-cyan-500 hover:text-white cursor-pointer"
                     >
-                      {skill}
+                      {skill.name}  {/* Si 'name' es el nombre de la habilidad */}
                     </span>
                   ))}
                 </div>

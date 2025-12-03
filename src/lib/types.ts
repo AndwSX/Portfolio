@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export interface Project {
   id: number;
   title: string;
@@ -28,4 +30,10 @@ export interface SocialLink {
   icon: string;
   url: string;
   label: string;
+}
+
+export interface Skill {
+  name: string;
+  icon: LucideIcon | React.FC<React.SVGProps<SVGSVGElement>>;
+  color: string; // HSL values
 }
