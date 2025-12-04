@@ -6,34 +6,72 @@ import { SKILLS } from '@/lib/constants'
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center px-4 py-24">
+    <section id="skills" className="min-h-screen flex items-center justify-center px-4 py-80">
       <div className="container max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-stagger">
-          <h2 className="text-4xl lg:text-5xl font-bold font-display mb-4 gradient-text">
-            Mis <span className="text-cyan-500">Habilidades </span> Técnicas
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">
-            Tecnologías y herramientas con las que trabajo
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          
+          {/* Columna Izquierda - Sticky */}
+          <div className="lg:col-span-5">
+            <div className="lg:sticky lg:top-32 space-y-8">
+              {/* Header con animación */}
+              <div className="space-y-6">
+                <div className="inline-block">
+                  <h2 className="text-4xl lg:text-5xl font-bold font-display gradient-text animate-fade-in">
+                    Mi Stack <span className="text-cyan-500">Tecnológico</span>
+                  </h2>
+                  <div className="h-1 w-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mt-4 animate-slide-right"></div>
+                </div>
+                
+                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                  Tecnologías y herramientas con las que trabajo para construir soluciones backend robustas y escalables.
+                </p>
+              </div>
 
-        {/* Skills Grid */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-            {SKILLS.map((skill, index) => (
-                <SkillCard key={skill.name} skill={skill} index={index} />
+              {/* Decorative dots */}
+              <div className="hidden lg:flex gap-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-bounce"></div>
+                <div className="w-2 h-2 rounded-full bg-blue-500 animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                <div className="w-2 h-2 rounded-full bg-purple-500 animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Columna Derecha - Skills por Categoría */}
+          <div className="lg:col-span-7 space-y-12">
+            {Object.entries(SKILLS).map(([category, skills], catIndex) => (
+              <div 
+                key={category} 
+                className="space-y-6 animate-fade-in"
+                style={{ animationDelay: `${catIndex * 0.1}s` }}
+              >
+                {/* Category Header con efecto */}
+                <div className="group flex items-center gap-3">
+                  <div className="h-8 w-1 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full group-hover:w-2 transition-all duration-300"></div>
+                  <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-wider uppercase group-hover:text-cyan-500 transition-colors duration-300">
+                    {category}
+                  </h3>
+                  <div className="flex-1 h-px bg-gradient-to-r from-gray-200 dark:from-gray-800 to-transparent"></div>
+                </div>
+
+                {/* Skills Grid */}
+                <div className="flex flex-wrap gap-6 md:gap-8">
+                  {skills.map((skill, index) => (
+                    <SkillCard 
+                      key={skill.name} 
+                      skill={skill} 
+                      index={catIndex * 10 + index} 
+                    />
+                  ))}
+                </div>
+              </div>
             ))}
+
+            {/* Final decoration */}
+            <div className="pt-8 flex justify-center">
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent rounded-full animate-pulse"></div>
+            </div>
+          </div>
         </div>
-
-
-        {/* Decorative Glow */}
-        <div
-          className="
-            fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-            w-[600px] h-[600px] rounded-full pointer-events-none -z-10 opacity-30
-          "
-          style={{ background: "var(--gradient-glow)" }}
-        />
       </div>
     </section>
   );
