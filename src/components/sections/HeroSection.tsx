@@ -84,9 +84,9 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <button className="glass-strong px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
-                <i className="ri-arrow-right-line"></i>
-                Contratar
+              <button className="glass-strong group px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
+                hablemos
+                <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
               </button>
               <button className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
                 <i className="ri-download-line"></i>
