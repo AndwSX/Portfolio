@@ -91,24 +91,36 @@ export const SERVICES: Service[] = [
   }
 ];
 
-export const SKILLS: Skill[] = [
-  { name: "JavaScript", icon: JavaScriptIcon, color: "50 100% 50%" },
-  { name: "TypeScript", icon: TypeScriptIcon, color: "211 60% 48%" },
-  { name: "Python", icon: PythonIcon, color: "207 51% 52%" },
-  { name: "React", icon: ReactIcon, color: "193 95% 68%" },
-  { name: "Next.js", icon: NextJSIcon, color: "0 0% 80%" },
-  { name: "Vue.js", icon: VueIcon, color: "153 47% 49%" },
-  { name: "Node.js", icon: NodeIcon, color: "120 25% 45%" },
-  { name: "Tailwind", icon: TailwindIcon, color: "193 95% 68%" },
-  { name: "PostgreSQL", icon: PostgreSQLIcon, color: "211 60% 48%" },
-  { name: "MongoDB", icon: MongoDBIcon, color: "120 35% 45%" },
-  { name: "Redis", icon: RedisIcon, color: "0 68% 52%" },
-  { name: "GraphQL", icon: GraphQLIcon, color: "319 100% 44%" },
-  { name: "Docker", icon: DockerIcon, color: "201 91% 59%" },
-  { name: "AWS", icon: AWSIcon, color: "33 100% 50%" },
-  { name: "Git", icon: GitIcon, color: "14 100% 57%" },
-  { name: "Figma", icon: FigmaIcon, color: "302 59% 65%" },
-  { name: "HTML/CSS", icon: Code2, color: "14 100% 57%" },
-  { name: "SQL", icon: Database, color: "199 89% 48%" },
-  { name: "UI/UX", icon: Palette, color: "280 80% 60%" },
-];
+export const SKILLS = {
+  "LANGUAGES": [
+    { name: "JavaScript", icon: JavaScriptIcon, color: "50 100% 50%" },
+    { name: "TypeScript", icon: TypeScriptIcon, color: "211 60% 48%" },
+    { name: "Python", icon: PythonIcon, color: "207 51% 52%" },
+    { name: "HTML/CSS", icon: Code2, color: "14 100% 57%" },
+    { name: "SQL", icon: Database, color: "199 89% 48%" },
+  ],
+  "RUNTIME & FRAMEWORKS": [
+    { name: "React", icon: ReactIcon, color: "193 95% 68%" },
+    { name: "Next.js", icon: NextJSIcon, color: "0 0% 80%" },
+    { name: "Vue.js", icon: VueIcon, color: "153 47% 49%" },
+    { name: "Node.js", icon: NodeIcon, color: "120 25% 45%" },
+    { name: "Tailwind", icon: TailwindIcon, color: "193 95% 68%" },
+  ],
+  "DATABASES": [
+    { name: "PostgreSQL", icon: PostgreSQLIcon, color: "211 60% 48%" },
+    { name: "MongoDB", icon: MongoDBIcon, color: "120 35% 45%" },
+    { name: "Redis", icon: RedisIcon, color: "0 68% 52%" },
+    { name: "GraphQL", icon: GraphQLIcon, color: "319 100% 44%" },
+  ],
+  "DEVOPS & TOOLS": [
+    { name: "Docker", icon: DockerIcon, color: "201 91% 59%" },
+    { name: "Git", icon: GitIcon, color: "14 100% 57%" },
+  ],
+  "CLOUD & DEPLOY": [
+    { name: "AWS", icon: AWSIcon, color: "33 100% 50%" },
+  ],
+  "DESIGN": [
+    { name: "Figma", icon: FigmaIcon, color: "302 59% 65%" },
+    { name: "UI/UX", icon: Palette, color: "280 80% 60%" },
+  ],
+};
