@@ -37,6 +37,7 @@
     background: linear-gradient(135deg, transparent, rgba(6, 182, 212, 0.05), transparent);
     background-size: 200% 200%;
   }
+
   /* Terminal window top dots */
   .code-dot-red {
     @apply bg-red-500/60;
@@ -98,6 +99,24 @@
   .code-string {
     @apply text-purple-400;
   }
+
+  /* Scrollbar hide utilities */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Line clamp utility */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 /* Smooth scrolling */
@@ -122,18 +141,21 @@ html {
   }
 }
 
-.loading-hide {
-  animation: fadeOut 0.8s ease-out forwards;
-  pointer-events: none;
+/* Modal and UI animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.loading-text {
-  animation: fadeInScale 1s ease-out;
-}
-
-.animate-float-subtle {
-  animation: floatSubtle 6s ease-in-out infinite;
-  animation-delay: var(--float-delay, 0s);
+@keyframes scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes floatSubtle {
@@ -148,3 +170,25 @@ html {
   }
 }
 
+/* Animation classes */
+.loading-hide {
+  animation: fadeOut 0.8s ease-out forwards;
+  pointer-events: none;
+}
+
+.loading-text {
+  animation: fadeInScale 1s ease-out;
+}
+
+.animate-float-subtle {
+  animation: floatSubtle 6s ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-scale-up {
+  animation: scale-up 0.4s ease-out;
+}

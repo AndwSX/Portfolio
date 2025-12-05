@@ -4,11 +4,15 @@ export interface Project {
   id: number;
   title: string;
   description: string;
+  longDescription: string;
   icon: string;
   gradient: string;
+  image: string;
   tags: string[];
-  delay?: string;
+  github: string;
+  demo: string;
 }
+
 
 export interface Service {
   id: number;
