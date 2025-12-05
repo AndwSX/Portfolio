@@ -14,13 +14,25 @@ export interface Project {
 }
 
 
-export interface Service {
+export interface ExperienceItem {
   id: number;
-  title: string;
+  company: string;
+  position: string;
+  period: string;
+  location: string;
   description: string;
+  achievements: string[];
+  technologies: string[];
   icon: string;
-  features: string[];
-  delay?: string;
+  color: string;
+}
+
+export interface Experience {
+  id: number;
+  year: string;
+  title: string;
+  company: string;
+  description: string;
 }
 
 export interface NavItem {

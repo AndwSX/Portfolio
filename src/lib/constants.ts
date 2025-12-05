@@ -1,4 +1,4 @@
-import { NavItem, Project, Service, SocialLink } from './types';
+import { NavItem, Project, ExperienceItem, SocialLink } from './types';
 import { Zap, Target, Rocket, Code2, Database, Palette } from "lucide-react";
 import {  } from "lucide-react";
 import {
@@ -25,7 +25,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'acerca', label: 'Acerca', icon: 'ri-user-line' },
   { id: 'skills', label: 'Habilidades', icon: 'ri-tools-line' },
   { id: 'proyectos', label: 'Proyectos', icon: 'ri-folder-line' },
-  { id: 'servicios', label: 'Experiencia', icon: 'ri-briefcase-line' },
+  { id: 'experiencia', label: 'Experiencia', icon: 'ri-briefcase-line' },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -83,33 +83,6 @@ export const PROJECTS: Project[] = [
     tags: ['React', 'Next.js', 'Tailwind', 'Framer Motion'],
     github: '#',
     demo: '#'
-  }
-];
-
-export const SERVICES: Service[] = [
-  {
-    id: 1,
-    title: 'Desarrollo Web',
-    description: 'Creación de aplicaciones web modernas, responsivas y optimizadas usando las últimas tecnologías.',
-    icon: 'ri-code-s-slash-line',
-    features: ['React & Next.js', 'TypeScript', 'TailwindCSS', 'APIs REST'],
-    delay: '0s'
-  },
-  {
-    id: 2,
-    title: 'Machine Learning',
-    description: 'Desarrollo e implementación de modelos de IA para resolver problemas complejos.',
-    icon: 'ri-brain-line',
-    features: ['Deep Learning', 'PyTorch', 'Data Science', 'Computer Vision'],
-    delay: '0.1s'
-  },
-  {
-    id: 3,
-    title: 'UI/UX Design',
-    description: 'Diseño de interfaces intuitivas y atractivas con enfoque en la experiencia del usuario.',
-    icon: 'ri-palette-line',
-    features: ['Figma', 'Prototyping', 'User Research', 'Design Systems'],
-    delay: '0.2s'
   }
 ];
 
@@ -174,4 +147,55 @@ export const EDUCATION = [
     description:
       "Node.js, APIs REST, bases de datos y arquitectura de microservicios",
   },
+];
+
+export const EXPERIENCES : ExperienceItem[] = [
+  {
+    id: 1,
+    company: 'Tech Innovations',
+    position: 'Senior Full Stack Developer',
+    period: '2022 - Presente',
+    location: 'Remote',
+    description: 'Desarrollo de aplicaciones web escalables utilizando tecnologías modernas como React, Node.js y AWS.',
+    achievements: [
+      'Lideré equipo de 5 desarrolladores',
+      'Reduje tiempos de carga en 60%',
+      'Implementé arquitectura microservicios'
+    ],
+    technologies: ['React', 'Node.js', 'AWS', 'Docker'],
+    icon: 'ri-code-s-slash-line',
+    color: 'from-cyan-500 to-blue-500'
+  },
+  {
+    id: 2,
+    company: 'StartupLab',
+    position: 'Frontend Developer',
+    period: '2020 - 2022',
+    location: 'Híbrido',
+    description: 'Construcción de interfaces de usuario innovadoras y experiencias interactivas para productos SaaS.',
+    achievements: [
+      'Desarrollé 15+ componentes reutilizables',
+      'Mejoré UX basado en analytics',
+      'Implementé testing automatizado'
+    ],
+    technologies: ['Vue.js', 'TypeScript', 'Tailwind'],
+    icon: 'ri-palette-line',
+    color: 'from-purple-500 to-pink-500'
+  },
+  {
+    id: 3,
+    company: 'Digital Agency',
+    position: 'Junior Developer',
+    period: '2019 - 2020',
+    location: 'Presencial',
+    description: 'Desarrollo de sitios web y aplicaciones para clientes diversos, enfoque en performance y SEO.',
+    achievements: [
+      'Entregué 20+ proyectos exitosos',
+      'Optimicé SEO alcanzando top 3',
+      'Colaboré con equipos multidisciplinarios'
+    ],
+    technologies: ['JavaScript', 'PHP', 'WordPress'],
+    icon: 'ri-rocket-line',
+    color: 'from-green-500 to-cyan-500'
+  }
 ];
