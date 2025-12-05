@@ -1,35 +1,6 @@
 "use client";
 
-import { Code2, Zap, Target, Rocket } from "lucide-react";
-
-const highlights = [
-  { icon: Code2, title: "Clean Code" },
-  { icon: Zap, title: "Performance" },
-  { icon: Target, title: "Problem Solving" },
-  { icon: Rocket, title: "Aprendizaje Continuo" },
-];
-
-const education = [
-  {
-    degree: "Análisis y Desarrollo de Software",
-    institution: "SENA Centro de Diseño y Metrología",
-    period: "2024",
-    status: "En formación - Etapa práctica",
-  },
-  {
-    degree: "Ingeniería en Sistemas",
-    institution: "Universidad Tecnológica",
-    period: "2020 - 2024",
-    description: "Enfoque en desarrollo de software y arquitectura de sistemas",
-  },
-  {
-    degree: "Certificación Backend Development",
-    institution: "Platzi / Udemy",
-    period: "2023",
-    description:
-      "Node.js, APIs REST, bases de datos y arquitectura de microservicios",
-  },
-];
+import { HIGHLIGHTS, EDUCATION  } from '@/lib/constants'
 
 export default function AboutSection() {
   return (
@@ -66,7 +37,7 @@ export default function AboutSection() {
 
               <div className="pt-4 border-t">
                 <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8">
-                  {highlights.map((item) => {
+                  {HIGHLIGHTS.map((item) => {
                     const Icon = item.icon;
                     return (
                       <div
@@ -90,7 +61,7 @@ export default function AboutSection() {
                 Educación
               </h4>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {education.map((edu, index) => (
+                {EDUCATION.map((edu, index) => (
                   <div
                     key={index}
                     className="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-white via-white to-gray-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-2 hover:border-cyan-500/30"
