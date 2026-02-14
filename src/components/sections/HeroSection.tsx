@@ -2,19 +2,22 @@
 
 import { useEffect, useState } from "react";
 import SocialLinks from "@/components/ui/SocialLinks";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+
+// Move texts outside component to prevent re-renders
+const texts = [
+  "import { Innovation } from 'creativity';",
+  "const developer = new AIEngineer();",
+  "console.log('Building the future...');",
+  "const passion = AI + WebDev + Design;",
+];
 
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-
-  const texts = [
-    "import { Innovation } from 'creativity';",
-    "const developer = new AIEngineer();",
-    "console.log('Building the future...');",
-    "const passion = AI + WebDev + Design;",
-  ];
+  const { targetRef, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
 
   useEffect(() => {
     const currentText = texts[textIndex];
@@ -46,12 +49,14 @@ export default function HeroSection() {
     );
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, textIndex, texts]);
+  }, [charIndex, isDeleting, textIndex]);
 
   return (
     <section
+      ref={targetRef}
       id="inicio"
-      className="min-h-screen flex items-center justify-center px-4 pt-24 pb-16"
+      className={`min-h-screen flex items-center justify-center px-4 pt-24 pb-16 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
+        }`}
     >
       <div className="container max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -99,8 +104,8 @@ export default function HeroSection() {
 
           <div className="hidden lg:block">
             <div className="relative animate-float">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-transparent rounded-3xl blur-3xl" />
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-orange-500/20 rounded-3xl blur-3xl animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-transparent rounded-3xl blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-orange-500/20 rounded-3xl blur-xl animate-pulse"></div>
 
               <div className="relative code-card overflow-hidden">
                 {/* Header */}

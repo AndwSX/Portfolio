@@ -2,14 +2,21 @@
 
 import SkillCard from '@/components/ui/SkillCard'
 import { SKILLS } from '@/lib/constants'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 
 export default function SkillsSection() {
+  const { targetRef, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center px-4 py-80">
+    <section
+      ref={targetRef}
+      id="skills"
+      className={`min-h-screen flex items-center justify-center px-4 py-80 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
+        }`}
+    >
       <div className="container max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-          
+
           {/* Columna Izquierda - Sticky */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-60 lg:bottom-60 md:mb-60 space-y-8">
@@ -21,7 +28,7 @@ export default function SkillsSection() {
                   </h2>
                   <div className="h-1 w-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mt-4 animate-slide-right"></div>
                 </div>
-                
+
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
                   Tecnologías y herramientas con las que trabajo para construir soluciones backend robustas y escalables.
                 </p>
@@ -39,8 +46,8 @@ export default function SkillsSection() {
           {/* Columna Derecha - Skills por Categoría */}
           <div className="lg:col-span-7 space-y-12">
             {Object.entries(SKILLS).map(([category, skills], catIndex) => (
-              <div 
-                key={category} 
+              <div
+                key={category}
                 className="space-y-6 animate-fade-in"
                 style={{ animationDelay: `${catIndex * 0.1}s` }}
               >
@@ -56,10 +63,10 @@ export default function SkillsSection() {
                 {/* Skills Grid */}
                 <div className="flex flex-wrap gap-6 md:gap-8">
                   {skills.map((skill, index) => (
-                    <SkillCard 
-                      key={skill.name} 
-                      skill={skill} 
-                      index={catIndex * 10 + index} 
+                    <SkillCard
+                      key={skill.name}
+                      skill={skill}
+                      index={catIndex * 10 + index}
                     />
                   ))}
                 </div>

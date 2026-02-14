@@ -1,17 +1,21 @@
 "use client";
 
-import { HIGHLIGHTS, EDUCATION  } from '@/lib/constants'
+import { HIGHLIGHTS, EDUCATION } from '@/lib/constants'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 export default function AboutSection() {
+  const { targetRef, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
   return (
     <section
+      ref={targetRef}
       id="acerca"
-      className="min-h-screen flex items-center justify-center px-4 py-24"
+      className={`min-h-screen flex items-center justify-center px-4 py-24 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
+        }`}
     >
       <div className="container max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative animate-scale-in order-2 lg:order-1">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-purple-500/20 rounded-3xl blur-xl animate-pulse"></div>
             <div className="relative glass-strong rounded-3xl p-8 shadow-2xl animate-float overflow-hidden">
               <div className="w-full aspect-square bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl flex items-center justify-center">
                 <i className="ri-terminal-box-line text-9xl text-blue-500/30"></i>

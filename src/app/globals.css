@@ -4,22 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Glass effect styles */
+/* Glass effect styles - Optimized for performance */
 @layer components {
   .glass {
-    @apply bg-white/10 backdrop-blur-[20px] border border-white/30;
+    @apply bg-white/10 backdrop-blur-[10px] border border-white/30;
+    will-change: transform;
   }
 
   .dark .glass {
-    @apply bg-black/10 backdrop-blur-[20px] border border-white/10;
+    @apply bg-black/10 backdrop-blur-[10px] border border-white/10;
+    will-change: transform;
   }
 
   .glass-strong {
-    @apply bg-white/5 backdrop-blur-[10px] border border-white/40;
+    @apply bg-white/5 backdrop-blur-[12px] border border-white/40;
+    will-change: transform;
   }
 
   .dark .glass-strong {
-    @apply bg-black/5 backdrop-blur-[30px] border border-white/15;
+    @apply bg-black/5 backdrop-blur-[12px] border border-white/15;
+    will-change: transform;
   }
 
   /* Gradient text */
@@ -191,4 +195,36 @@ html {
 
 .animate-scale-up {
   animation: scale-up 0.4s ease-out;
+}
+
+/* Viewport fade animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.section-visible {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(30px);
 }

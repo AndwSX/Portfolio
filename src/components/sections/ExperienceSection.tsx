@@ -2,13 +2,20 @@ import { useState } from 'react';
 
 import { EXPERIENCES } from "@/lib/constants";
 import { ExperienceTimeline } from "@/components/ui/ExperienceCard";
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 
 export default function ExperienceSection() {
   const [activeId, setActiveId] = useState<number | null>(1);
+  const { targetRef, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
 
   return (
-    <section id="experiencia" className="min-h-screen flex items-center justify-center px-4 pb-24 pt-80">
+    <section
+      ref={targetRef}
+      id="experiencia"
+      className={`min-h-screen flex items-center justify-center px-4 pb-24 pt-80 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
+        }`}
+    >
       <div className="container max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
@@ -41,21 +48,21 @@ export default function ExperienceSection() {
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Años de experiencia</div>
           </div>
-          
+
           <div className="glass-strong rounded-2xl p-6 text-center group hover:border-purple-500/50 transition-all duration-300">
             <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
               50+
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Proyectos completados</div>
           </div>
-          
+
           <div className="glass-strong rounded-2xl p-6 text-center group hover:border-green-500/50 transition-all duration-300">
             <div className="text-3xl font-bold bg-gradient-to-r from-green-500 to-cyan-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
               15+
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Tecnologías</div>
           </div>
-          
+
           <div className="glass-strong rounded-2xl p-6 text-center group hover:border-orange-500/50 transition-all duration-300">
             <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
               100%

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { PROJECTS } from "@/lib/constants";
 import { Modal, ProjectCard } from "@/components/ui/ProjectCard";
 import { Project } from "@/lib/types";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 export default function ProjectsSection() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -11,6 +12,7 @@ export default function ProjectsSection() {
   const [startX, setStartX] = useState<number>(0);
   const [scrollLeft, setScrollLeft] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
+  const { targetRef, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
 
   const scrollToProject = (index: number) => {
     if (scrollContainerRef.current) {
@@ -32,40 +34,49 @@ export default function ProjectsSection() {
     }
   };
 
-  // Detectar scroll y actualizar el índice activo
+  // Detectar scroll y actualizar el índice activo - Optimizado con throttling
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
+    let rafId: number;
     const handleScroll = () => {
-      const containerCenter = container.scrollLeft + container.offsetWidth / 2;
-      const cards = container.querySelectorAll(".project-card");
+      if (rafId) return; // Throttle con requestAnimationFrame
 
-      let closestIndex = 0;
-      let closestDistance = Infinity;
+      rafId = requestAnimationFrame(() => {
+        const containerCenter = container.scrollLeft + container.offsetWidth / 2;
+        const cards = container.querySelectorAll(".project-card");
 
-      cards.forEach((card, index) => {
-        const cardElement = card as HTMLElement;
-        const cardCenter = cardElement.offsetLeft + cardElement.offsetWidth / 2;
-        const distance = Math.abs(containerCenter - cardCenter);
+        let closestIndex = 0;
+        let closestDistance = Infinity;
 
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = index;
+        cards.forEach((card, index) => {
+          const cardElement = card as HTMLElement;
+          const cardCenter = cardElement.offsetLeft + cardElement.offsetWidth / 2;
+          const distance = Math.abs(containerCenter - cardCenter);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        });
+
+        if (closestIndex !== currentIndex) {
+          setCurrentIndex(closestIndex);
         }
+        rafId = 0;
       });
-
-      if (closestIndex !== currentIndex) {
-        setCurrentIndex(closestIndex);
-      }
     };
 
-    container.addEventListener("scroll", handleScroll);
+    container.addEventListener("scroll", handleScroll, { passive: true });
 
     // Inicializar en el primer proyecto
     handleScroll();
 
-    return () => container.removeEventListener("scroll", handleScroll);
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [currentIndex]);
 
   // Auto-play del carrusel
@@ -116,8 +127,10 @@ export default function ProjectsSection() {
 
   return (
     <section
+      ref={targetRef}
       id="proyectos"
-      className="min-h-screen flex items-center justify-center px-4 py-24"
+      className={`min-h-screen flex items-center justify-center px-4 py-24 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
+        }`}
     >
       <div className="container max-w-7xl mx-auto">
         {/* Header */}
@@ -184,10 +197,9 @@ export default function ProjectsSection() {
                 }}
                 className={`
                   h-2 rounded-full transition-all duration-300
-                  ${
-                    index === currentIndex
-                      ? "w-8 bg-cyan-500"
-                      : "w-2 bg-gray-300 dark:bg-gray-700 hover:bg-cyan-400"
+                  ${index === currentIndex
+                    ? "w-8 bg-cyan-500"
+                    : "w-2 bg-gray-300 dark:bg-gray-700 hover:bg-cyan-400"
                   }
                 `}
               />
