@@ -146,19 +146,23 @@ export default function ProjectsSection() {
         {/* Carousel Container */}
         <div className="relative">
           {/* Navigation Buttons */}
-          <button
-            onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 glass rounded-full flex items-center justify-center hover:scale-110 hover:border-cyan-500/50 transition-all duration-300 hidden md:flex"
-          >
-            <i className="ri-arrow-left-s-line text-2xl"></i>
-          </button>
+          {PROJECTS.length > 1 && (
+            <>
+              <button
+                onClick={handlePrev}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 glass rounded-full flex items-center justify-center hover:scale-110 hover:border-cyan-500/50 transition-all duration-300 hidden md:flex"
+              >
+                <i className="ri-arrow-left-s-line text-2xl"></i>
+              </button>
 
-          <button
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 glass rounded-full flex items-center justify-center hover:scale-110 hover:border-cyan-500/50 transition-all duration-300 hidden md:flex"
-          >
-            <i className="ri-arrow-right-s-line text-2xl"></i>
-          </button>
+              <button
+                onClick={handleNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 glass rounded-full flex items-center justify-center hover:scale-110 hover:border-cyan-500/50 transition-all duration-300 hidden md:flex"
+              >
+                <i className="ri-arrow-right-s-line text-2xl"></i>
+              </button>
+            </>
+          )}
 
           {/* Carousel */}
           <div

@@ -3,14 +3,9 @@
 import { useEffect, useState } from "react";
 import SocialLinks from "@/components/ui/SocialLinks";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { HERO_ANIMATED_TEXTS } from "@/lib/constants";
 
-// Move texts outside component to prevent re-renders
-const texts = [
-  "import { Innovation } from 'creativity';",
-  "const developer = new AIEngineer();",
-  "console.log('Building the future...');",
-  "const passion = AI + WebDev + Design;",
-];
+
 
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState("");
@@ -20,7 +15,7 @@ export default function HeroSection() {
   const { targetRef, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
 
   useEffect(() => {
-    const currentText = texts[textIndex];
+    const currentText = HERO_ANIMATED_TEXTS[textIndex];
 
     const timer = setTimeout(
       () => {
@@ -41,7 +36,7 @@ export default function HeroSection() {
           } else {
             // Terminó de borrar, pasa al siguiente texto
             setIsDeleting(false);
-            setTextIndex((textIndex + 1) % texts.length);
+            setTextIndex((textIndex + 1) % HERO_ANIMATED_TEXTS.length);
           }
         }
       },
@@ -81,16 +76,17 @@ export default function HeroSection() {
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
               Soy un{" "}
               <span className="font-semibold text-gray-900 dark:text-gray-100">
-                desarrollador en constante evolución,
+                Desarrollador Full Stack,
               </span>{" "}
-              apasionado por aprender, crear y transformar ideas en proyectos
-              reales. Disfruto enfrentar desafíos, analizar problemas y
-              convertirlos en soluciones claras y bien pensadas.
+              especializado en automatización de procesos
+              empresariales. Diseño y desarrollo soluciones web que optimizan tareas 
+              manuales y mejoran la eficiencia operativa, utilizando tecnologías 
+              como Python, FastAPI, React y PostgreSQL.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <button className="glass-strong group px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
-                hablemos
+                Hablemos
                 <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
               </button>
               <button className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
@@ -104,8 +100,8 @@ export default function HeroSection() {
 
           <div className="hidden lg:block">
             <div className="relative animate-float">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-transparent rounded-3xl blur-xl" />
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-orange-500/20 rounded-3xl blur-xl animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-transparent rounded-3xl blur-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-orange-500/20 rounded-3xl blur-3xl animate-pulse"></div>
 
               <div className="relative code-card overflow-hidden">
                 {/* Header */}

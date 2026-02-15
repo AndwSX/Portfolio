@@ -24,13 +24,13 @@ export default function SkillsSection() {
               <div className="space-y-6">
                 <div className="inline-block">
                   <h2 className="text-4xl lg:text-5xl font-bold font-display gradient-text animate-fade-in">
-                    Mi Stack <span className="text-cyan-500">Tecnológico</span>
+                    Mis <span className="text-cyan-500">Habilidades</span>
                   </h2>
                   <div className="h-1 w-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mt-4 animate-slide-right"></div>
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  Tecnologías y herramientas con las que trabajo para construir soluciones backend robustas y escalables.
+                  Tecnologías y herramientas que domino para desarrollar aplicaciones web completas, desde el backend hasta el frontend.
                 </p>
               </div>
 

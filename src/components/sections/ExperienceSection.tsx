@@ -40,7 +40,7 @@ export default function ExperienceSection() {
           ))}
         </div>
 
-        {/* Stats Section */}
+        {/* Stats Section 
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           <div className="glass-strong rounded-2xl p-6 text-center group hover:border-cyan-500/50 transition-all duration-300">
             <div className="text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
@@ -70,6 +70,7 @@ export default function ExperienceSection() {
             <div className="text-sm text-gray-600 dark:text-gray-400">Satisfacción</div>
           </div>
         </div>
+        */}
 
         {/* CTA */}
         <div className="mt-16 text-center">

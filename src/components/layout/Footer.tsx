@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold font-display mb-2">Andres Ortiz</h3>
-            <p className="text-gray-600 dark:text-gray-400">Desarrollador & Estudiante de IA</p>
+            <p className="text-gray-600 dark:text-gray-400">Desarrollador Full Stack | Tecnólogo ADSO</p>
           </div>
-          
+
           <div className="flex gap-4">
             {SOCIAL_LINKS.map((social) => (
               <a
@@ -25,9 +25,9 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-gray-300 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400">
-          <p>© 2025 Andres Ortiz. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Andres Ortiz. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

@@ -28,8 +28,8 @@ Portfolio profesional desarrollado con Next.js, TypeScript y TailwindCSS. Diseñ
 1. **Clona el repositorio**
 
 ```bash
-git clone https://github.com/tu-usuario/portfolio-nextjs.git
-cd portfolio-nextjs
+git clone https://github.com/AndwSX/Portfolio.git
+cd Portfolio
 ```
 
 2. **Instala las dependencias**
@@ -59,7 +59,7 @@ Visita [http://localhost:3000](http://localhost:3000) para ver el resultado.
 ## 📁 Estructura del Proyecto
 
 ```
-portfolio-nextjs/
+Portfolio/
 ├── public/                 # Archivos estáticos
 │   └── images/            # Imágenes del portfolio
 ├── src/
@@ -75,8 +75,8 @@ portfolio-nextjs/
 │   │   ├── useTheme.ts
 │   │   └── useActiveSection.ts
 │   └── lib/              # Utilidades y constantes
-│       ├── constants.ts
-│       └── types.ts
+│       ├── constants.ts  # Constantes del proyecto
+│       └── types.ts      # Tipos del proyecto
 ├── tailwind.config.ts    # Configuración de Tailwind
 ├── tsconfig.json         # Configuración de TypeScript
 └── next.config.js        # Configuración de Next.js
@@ -90,7 +90,6 @@ Edita `src/lib/constants.ts`:
 
 ```typescript
 export const SOCIAL_LINKS: SocialLink[] = [
-  { id: 'instagram', icon: 'ri-instagram-line', url: 'TU_URL', label: 'Instagram' },
   { id: 'linkedin', icon: 'ri-linkedin-line', url: 'TU_URL', label: 'LinkedIn' },
   { id: 'github', icon: 'ri-github-line', url: 'TU_URL', label: 'GitHub' },
 ]
@@ -131,7 +130,7 @@ npm run lint     # Ejecuta el linter
 - **Framework**: [Next.js 14](https://nextjs.org/)
 - **Lenguaje**: [TypeScript](https://www.typescriptlang.org/)
 - **Estilos**: [TailwindCSS](https://tailwindcss.com/)
-- **Iconos**: [RemixIcon](https://remixicon.com/)
+- **Iconos**: [Lucide React](https://lucide.dev/)
 - **Fuentes**: [Google Fonts (Outfit)](https://fonts.google.com/specimen/Outfit)
 
 ## 📝 Licencia
@@ -152,9 +151,9 @@ Las contribuciones son bienvenidas. Por favor:
 
 **Andrés Ortiz**
 
-- Portfolio: [tu-portfolio.com](https://tu-portfolio.com)
-- LinkedIn: [linkedin.com/in/tu-perfil](https://linkedin.com/in/tu-perfil)
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
+- Portfolio: [Portfolio](https://portfolio-andresz.vercel.app/)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/andres-ortiz-3a3205236/)
+- GitHub: [@AndwSX](https://github.com/AndwSX)
 
 ---
 

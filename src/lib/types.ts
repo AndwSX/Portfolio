@@ -53,3 +53,18 @@ export interface Skill {
   icon: LucideIcon | React.FC<React.SVGProps<SVGSVGElement>>;
   color: string; // HSL values
 }
+
+export interface Certificate {
+  title: string;
+  institution: string;
+  year: string;
+  topics: string[];
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  status?: string;
+  description?: string;
+}
