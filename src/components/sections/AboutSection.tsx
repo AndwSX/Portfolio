@@ -27,7 +27,7 @@ export default function AboutSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse"></div>
                 <div className="relative glass-strong rounded-3xl p-8 shadow-2xl animate-float overflow-hidden">
                   <div className="w-full aspect-square bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl flex items-center justify-center">
-                    <i className="ri-terminal-box-line text-9xl text-blue-500/30"></i>
+                    <i className="ri-file-image-line text-9xl text-blue-500/30"></i>
                   </div>
                 </div>
               </div>
@@ -45,11 +45,12 @@ export default function AboutSection() {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Andrés Ortiz</h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Desarrollador Full Stack con experiencia práctica en SIMETRIC S.A.,
-                    donde he desarrollado 7 aplicaciones completas en 4 meses, automatizando
-                    procesos críticos del negocio. Tecnólogo en formación ADSO del SENA,
-                    especializado en Python, FastAPI, React y PostgreSQL para crear
-                    soluciones empresariales escalables.
+                    Desarrollador de Software con experiencia en desarrollo backend, 
+                    automatización de procesos e integración de sistemas empresariales. 
+                    Cuento con experiencia práctica en SIMETRIC S.A. 
+                    desarrollando aplicaciones web, APIs y soluciones enfocadas en la optimización de procesos internos. 
+                    Tecnólogo ADSO del SENA, con sólidos conocimientos en Python, FastAPI, React y PostgreSQL para construir soluciones escalables, 
+                    eficientes y orientadas al negocio.
                   </p>
                 </div>
 

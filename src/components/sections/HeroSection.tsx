@@ -76,7 +76,7 @@ export default function HeroSection() {
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
               Soy un{" "}
               <span className="font-semibold text-gray-900 dark:text-gray-100">
-                Desarrollador Full Stack,
+                Desarrollador de Software,
               </span>{" "}
               especializado en automatización de procesos
               empresariales. Diseño y desarrollo soluciones web que optimizan tareas 
@@ -89,10 +89,14 @@ export default function HeroSection() {
                 Hablemos
                 <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
               </button>
-              <button className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
+              <a 
+                href="/docs/CV_Andres_Ortiz_2026.pdf" 
+                download
+                className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2"
+              >
                 <i className="ri-download-line"></i>
                 Descargar CV
-              </button>
+              </a>
             </div>
 
             <SocialLinks />

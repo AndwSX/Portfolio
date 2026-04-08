@@ -39,14 +39,14 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const HERO_ANIMATED_TEXTS = [
-  "const developer = new FullStackDev();",
+  "const developer = new BackendDev();",
   "import { Innovation } from 'creativity';",
   "console.log('Building the future...');",
   "const stack = Python + React + PostgreSQL;",
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { id: 'linkedin', icon: 'ri-linkedin-line', url: 'https://www.linkedin.com/in/andres-ortiz-3a3205236/', label: 'LinkedIn' },
+  { id: 'linkedin', icon: 'ri-linkedin-line', url: 'https://www.linkedin.com/in/afortizdev/', label: 'LinkedIn' },
   { id: 'github', icon: 'ri-github-line', url: 'https://github.com/AndwSX', label: 'GitHub' },
   { id: 'email', icon: 'ri-mail-line', url: 'mailto:ortiz.andw@gmail.com', label: 'Email' },
 ];
@@ -59,9 +59,10 @@ export const PROJECTS: Project[] = [
     longDescription: 'Aplicación web completa para gestión de ventas y seguimiento de servicios técnicos. Incluye autenticación con roles (administrador/técnico), CRUD de clientes, usuarios y productos, dashboard con métricas, gestión de imágenes, y sistema de seguimiento de estados del servicio técnico (en progreso, finalizado, completado, en revisión).',
     icon: 'ri-tools-fill',
     gradient: 'from-green-400 to-cyan-500',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop',
+    //1788 × 640 | 2682 × 960 la resolucion de la imagen
+    image: '/images/diventracker.png',
     tags: ['FastAPI', 'Jinja2', 'Bootstrap', 'MySQL', 'JavaScript', 'AJAX', 'Chart.js', 'DataTables'],
-    github: 'https://github.com/AndwSX',
+    github: 'https://github.com/Diventracker/Diven',
     demo: '#'
   },
   // {
@@ -135,12 +136,12 @@ export const SKILLS = {
 };
 
 export const HIGHLIGHTS = [
-  { icon: Code2, title: "7 aplicaciones desarrolladas en 4 meses" },
+  { icon: Code2, title: "Aplicaciones reales en entorno productivo" },
   { icon: Zap, title: "APIs REST con FastAPI y Express" },
   { icon: Database, title: "Gestión de PostgreSQL en producción" },
   { icon: Settings, title: "Automatización con Python y PHP" },
   { icon: Rocket, title: "Integración FTP y procesamiento de PDFs" },
-  { icon: Target, title: "Desarrollo Full Stack (Backend + Frontend)" },
+  { icon: Target, title: "Desarrollo de Software (Backend + Frontend)" },
   { icon: Users, title: "Dashboards con Chart.js y DataTables" },
 ];
 
@@ -187,8 +188,9 @@ export const EDUCATION: Education[] = [
   {
     degree: "Análisis y Desarrollo de Software",
     institution: "SENA Centro de Diseño y Metrología",
-    period: "2024 - Presente",
-    status: "En formación - Etapa práctica",
+    period: "2023 - 2026",
+    description: "Enfoque en desarrollo de software y arquitectura de sistemas",
+    //status: "En formación - Etapa práctica",
   },
   // {
   //   degree: "Ingeniería en Sistemas",
@@ -210,17 +212,17 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: 1,
     company: 'SIMETRIC S.A.',
     position: 'Practicante Sistemas',
-    period: '2025 - Presente',
+    period: 'Oct - 2025 - Abr - 2026',
     location: 'Presencial',
     description: 'Soporte técnico y desarrollo de aplicaciones web internas. Mi rol principal es brindar soporte remoto (TeamViewer, AnyDesk) y gestión de bases de datos, desarrollando soluciones web cuando surgen necesidades específicas en las diferentes áreas de la empresa. Trabajo con múltiples tecnologías backend (Python, PHP, C#) y frontend (React, Vue.js).',
     achievements: [
-      'Desarrollé 7 aplicaciones web completas en 4 meses, automatizando procesos críticos del negocio',
+      'Desarrollé y mantuve aplicaciones web internas, automatizando procesos críticos del negocio',
       'Creé sistema de procesamiento automático de PDFs con integración FTP, insertando imágenes de huellas digitales dinámicamente usando Python y Paramiko',
       'Implementé aplicación de encuestas de satisfacción con dashboard analítico usando PHP, PostgreSQL, Chart.js y Tailwind CSS',
       'Desarrollé aplicación Electron que integra múltiples APIs (FastAPI + Express) con bases de datos PostgreSQL, usando React y Vue.js',
       'Construí sistema de descarga de certificados con conversión HTML a PDF y manejo de Base64, optimizando la distribución de documentos',
       'Mejoré interfaz de agendamiento empresarial con Bootstrap, aumentando la usabilidad del sistema',
-      'Actualmente desarrollando sistema de pausas activas obligatorias con C#, API en PHP y PostgreSQL'
+      'Participe en el desarrollo de un sistema de pausas activas obligatorias con C#, API en PHP y PostgreSQL'
     ],
     technologies: ['Python', 'FastAPI', 'PHP', 'C#', 'JavaScript', 'TypeScript', 'React', 'Vue.js', 'Electron', 'Express', 'Node.js', 'PostgreSQL', 'MySQL', 'Tailwind CSS', 'Bootstrap', 'Chart.js', 'DataTables', 'Docker', 'Git', 'Linux', 'FTP', 'Paramiko', 'Tkinter', 'AJAX'],
     icon: 'ri-code-s-slash-line',

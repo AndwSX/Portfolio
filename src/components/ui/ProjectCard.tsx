@@ -171,6 +171,7 @@ export function Modal({ project, onClose }: ModalProps) {
             <a
               href={project.github}
               className="py-3 px-6 rounded-xl glass transition-all duration-300 hover:scale-105 hover:border-cyan-500/50 flex items-center justify-center gap-2 bg-white/50 dark:bg-black/20 text-gray-800 dark:text-white"
+              target='_blank'
               onClick={(e) => e.stopPropagation()}
             >
               <i className="ri-github-fill text-xl"></i>

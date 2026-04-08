@@ -1,6 +1,6 @@
 'use client'
 
-import { SOCIAL_LINKS } from '@/lib/constants'
+import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function Footer() {
   return (
@@ -9,20 +9,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold font-display mb-2">Andres Ortiz</h3>
-            <p className="text-gray-600 dark:text-gray-400">Desarrollador Full Stack | Tecnólogo ADSO</p>
+            <p className="text-gray-600 dark:text-gray-400">Desarrollador de Software | Tecnólogo ADSO</p>
           </div>
 
           <div className="flex gap-4">
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.id}
-                href={social.url}
-                className="w-12 h-12 rounded-xl glass flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 hover:shadow-glow hover:text-cyan-500"
-                aria-label={social.label}
-              >
-                <i className={social.icon}></i>
-              </a>
-            ))}
+            <SocialLinks />
           </div>
         </div>
 

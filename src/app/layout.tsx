@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Andres Ortiz - Portfolio',
-  description: 'Portfolio de Andrés Ortiz - Desarrollador Full Stack especializado en Python, FastAPI, React y PostgreSQL. Experiencia en automatización de procesos empresariales y desarrollo de aplicaciones web completas.',
+  description: 'Portfolio de Andrés Ortiz - Desarrollador de Software especializado en Python, FastAPI, React y PostgreSQL. Experiencia en automatización de procesos empresariales y desarrollo de aplicaciones web completas.',
 }
 
 export default function RootLayout({

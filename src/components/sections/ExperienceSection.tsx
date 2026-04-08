@@ -83,10 +83,14 @@ export default function ExperienceSection() {
               Estoy abierto a nuevas oportunidades y colaboraciones interesantes.
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-4">
-              <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
+              <a 
+                href="/docs/CV_Andres_Ortiz_2026.pdf" 
+                download
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2"
+              >
                 <i className="ri-download-line"></i>
                 Descargar CV
-              </button>
+              </a>
               <button className="glass px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:border-cyan-500/50 flex items-center gap-2">
                 <i className="ri-mail-line"></i>
                 Contactar

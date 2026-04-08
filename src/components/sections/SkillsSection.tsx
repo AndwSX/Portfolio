@@ -19,7 +19,7 @@ export default function SkillsSection() {
 
           {/* Columna Izquierda - Sticky */}
           <div className="lg:col-span-5">
-            <div className="lg:sticky lg:top-60 lg:bottom-60 md:mb-60 space-y-8">
+            <div className="lg:sticky lg:top-40 space-y-8">
               {/* Header con animación */}
               <div className="space-y-6">
                 <div className="inline-block">

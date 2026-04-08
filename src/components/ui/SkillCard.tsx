@@ -15,7 +15,7 @@ export default function SkillCard({ skill, index }: SkillCardProps) {
       className="
         group relative flex items-center justify-center
         w-14 h-14 md:w-16 md:h-16
-        bg-card border border-border/50 rounded-xl cursor-pointer
+        bg-card border border-border/50 rounded-xl
         transition-all duration-300 ease-out
         hover:scale-110 hover:border-primary/50 hover:shadow-lg
         animate-skill-pop animate-float-subtle
