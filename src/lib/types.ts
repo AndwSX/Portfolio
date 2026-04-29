@@ -5,7 +5,7 @@ export interface Project {
   title: string;
   description: string;
   longDescription: string;
-  icon: LucideIcon;
+  icon: any;
   gradient: string;
   image: string;
   tags: string[];
@@ -23,7 +23,7 @@ export interface ExperienceItem {
   description: string;
   achievements: string[];
   technologies: string[];
-  icon: LucideIcon;
+  icon: any;
   color: string;
 }
 
@@ -38,19 +38,19 @@ export interface Experience {
 export interface NavItem {
   id: string;
   label: string;
-  icon: LucideIcon;
+  icon: any;
 }
 
 export interface SocialLink {
   id: string;
-  icon: LucideIcon;
+  icon: any;
   url: string;
   label: string;
 }
 
 export interface Skill {
   name: string;
-  icon: LucideIcon | React.FC<React.SVGProps<SVGSVGElement>>;
+  icon: any;
   color: string; // HSL values
 }
 
