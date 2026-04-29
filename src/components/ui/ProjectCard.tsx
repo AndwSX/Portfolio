@@ -1,11 +1,15 @@
 'use client'
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import Image from 'next/image';
 import { Project } from '@/lib/types'
+import { ArrowRight, X, Check, ExternalLink, Github } from 'lucide-react';
 
 type ProjectCardProps = {
   project: Project;
   isActive: boolean;
+  onClick?: () => void;
 };
 
 type ModalProps = {
@@ -13,9 +17,10 @@ type ModalProps = {
   onClose: () => void;
 };
 
-export function ProjectCard({ project, isActive }: ProjectCardProps) {
+export function ProjectCard({ project, isActive, onClick }: ProjectCardProps) {
   return (
     <div
+      onClick={onClick}
       className={`
         group glass-strong rounded-3xl overflow-hidden transition-all duration-500 
         flex-shrink-0 w-[85vw] md:w-[400px] lg:w-[450px]
@@ -25,17 +30,20 @@ export function ProjectCard({ project, isActive }: ProjectCardProps) {
     >
       {/* Image Header */}
       <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-800 dark:to-gray-900">
-        <img 
+        <Image 
           src={project.image} 
           alt={project.title}
-          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+          fill
+          sizes="(max-width: 768px) 85vw, (max-width: 1200px) 400px, 450px"
+          className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+          priority={project.id <= 2}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         
         {/* Icon floating */}
         <div className="absolute top-4 right-4">
           <div className="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <i className={`${project.icon} text-cyan-400 text-2xl`}></i>
+            {(() => { const Icon = project.icon; return <Icon size={24} className="text-cyan-400" />; })()}
           </div>
         </div>
       </div>
@@ -66,7 +74,7 @@ export function ProjectCard({ project, isActive }: ProjectCardProps) {
         <div className="pt-2">
           <button className="w-full py-2.5 rounded-xl glass font-medium transition-all duration-300 hover:bg-cyan-500/10 hover:border-cyan-500/50 flex items-center justify-center gap-2 text-sm">
             <span>Ver detalles</span>
-            <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
@@ -75,43 +83,50 @@ export function ProjectCard({ project, isActive }: ProjectCardProps) {
 }
 
 export function Modal({ project, onClose }: ModalProps) {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, []);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in bg-black/60 dark:bg-black/80 backdrop-blur-xl"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in bg-black/70"
       onClick={onClose}
     >
       <div 
-        className="glass-strong rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-up bg-white/95 dark:bg-black/40 border-gray-200/50 dark:border-white/20"
+        className="rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-up bg-white dark:bg-black border border-gray-200/50 dark:border-white/10 relative shadow-2xl"
+        style={{ willChange: 'transform, opacity' }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-300 bg-white/80 dark:bg-black/40"
+          className="absolute top-4 right-4 z-20 w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-300 bg-white/80 dark:bg-black/40"
         >
-          <i className="ri-close-line text-xl text-gray-800 dark:text-white"></i>
+          <X size={20} className="text-gray-800 dark:text-white" />
         </button>
 
         {/* Large Image */}
         <div className="relative h-64 md:h-80 overflow-hidden">
-          <img 
+          <Image 
             src={project.image} 
             alt={project.title}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
           
           {/* Icon en modal */}
           <div className="absolute bottom-6 left-6">
             <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center bg-white/20 dark:bg-black/40">
-              <i className={`${project.icon} text-cyan-400 text-3xl`}></i>
+              {(() => { const Icon = project.icon; return <Icon size={30} className="text-cyan-400" />; })()}
             </div>
           </div>
         </div>
@@ -132,7 +147,7 @@ export function Modal({ project, onClose }: ModalProps) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-4 py-2 glass rounded-xl text-sm font-medium border-cyan-500/30 bg-white/50 dark:bg-black/20 text-gray-700 dark:text-gray-200"
+                className="px-4 py-2 rounded-xl text-sm font-medium border border-cyan-500/20 bg-cyan-500/5 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-300"
               >
                 {tag}
               </span>
@@ -140,19 +155,19 @@ export function Modal({ project, onClose }: ModalProps) {
           </div>
 
           {/* Features/Details Section */}
-          <div className="glass rounded-2xl p-6 space-y-4 bg-white/60 dark:bg-black/20 border-gray-200/50 dark:border-white/10">
-            <h3 className="text-xl font-bold text-cyan-500">Características destacadas</h3>
+          <div className="rounded-2xl p-6 space-y-4 bg-gray-50 dark:bg-black/20 border border-gray-200/50 dark:border-white/10">
+            <h3 className="text-xl font-bold text-cyan-600 dark:text-cyan-500">Características destacadas</h3>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300">
               <li className="flex items-start gap-2">
-                <i className="ri-check-line text-cyan-500 mt-1"></i>
+                <Check size={14} className="text-cyan-500 mt-1 flex-shrink-0" />
                 <span>Arquitectura escalable y modular</span>
               </li>
               <li className="flex items-start gap-2">
-                <i className="ri-check-line text-cyan-500 mt-1"></i>
+                <Check size={14} className="text-cyan-500 mt-1 flex-shrink-0" />
                 <span>Implementación de mejores prácticas</span>
               </li>
               <li className="flex items-start gap-2">
-                <i className="ri-check-line text-cyan-500 mt-1"></i>
+                <Check size={14} className="text-cyan-500 mt-1 flex-shrink-0" />
                 <span>Diseño responsive y accesible</span>
               </li>
             </ul>
@@ -165,7 +180,7 @@ export function Modal({ project, onClose }: ModalProps) {
               className="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center justify-center gap-2"
               onClick={(e) => e.stopPropagation()}
             >
-              <i className="ri-external-link-line"></i>
+              <ExternalLink size={16} />
               Ver Proyecto
             </a>
             <a
@@ -174,12 +189,13 @@ export function Modal({ project, onClose }: ModalProps) {
               target='_blank'
               onClick={(e) => e.stopPropagation()}
             >
-              <i className="ri-github-fill text-xl"></i>
+              <Github size={20} />
               <span className="hidden md:inline">GitHub</span>
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

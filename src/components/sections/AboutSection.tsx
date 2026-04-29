@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FileImage, GraduationCap, Award } from 'lucide-react';
 
 import { HIGHLIGHTS, EDUCATION, CERTIFICATES } from '@/lib/constants'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
@@ -27,7 +28,7 @@ export default function AboutSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse"></div>
                 <div className="relative glass-strong rounded-3xl p-8 shadow-2xl animate-float overflow-hidden">
                   <div className="w-full aspect-square bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl flex items-center justify-center">
-                    <i className="ri-file-image-line text-9xl text-blue-500/30"></i>
+                    <FileImage size={96} className="text-blue-500/30" />
                   </div>
                 </div>
               </div>
@@ -45,11 +46,11 @@ export default function AboutSection() {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Andrés Ortiz</h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Desarrollador de Software con experiencia en desarrollo backend, 
-                    automatización de procesos e integración de sistemas empresariales. 
-                    Cuento con experiencia práctica en SIMETRIC S.A. 
-                    desarrollando aplicaciones web, APIs y soluciones enfocadas en la optimización de procesos internos. 
-                    Tecnólogo ADSO del SENA, con sólidos conocimientos en Python, FastAPI, React y PostgreSQL para construir soluciones escalables, 
+                    Desarrollador de Software con experiencia en desarrollo backend,
+                    automatización de procesos e integración de sistemas empresariales.
+                    Cuento con experiencia práctica en SIMETRIC S.A.
+                    desarrollando aplicaciones web, APIs y soluciones enfocadas en la optimización de procesos internos.
+                    Tecnólogo ADSO del SENA, con sólidos conocimientos en Python, FastAPI, React y PostgreSQL para construir soluciones escalables,
                     eficientes y orientadas al negocio.
                   </p>
                 </div>
@@ -80,21 +81,21 @@ export default function AboutSection() {
                 <button
                   onClick={() => setActiveTab('education')}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${activeTab === 'education'
-                      ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/30'
-                      : 'glass hover:border-cyan-500/50'
+                    ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/30'
+                    : 'glass hover:border-cyan-500/50'
                     }`}
                 >
-                  <i className="ri-graduation-cap-line text-lg"></i>
+                  <GraduationCap size={18} />
                   Educación
                 </button>
                 <button
                   onClick={() => setActiveTab('certificates')}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${activeTab === 'certificates'
-                      ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/30'
-                      : 'glass hover:border-cyan-500/50'
+                    ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/30'
+                    : 'glass hover:border-cyan-500/50'
                     }`}
                 >
-                  <i className="ri-award-line text-lg"></i>
+                  <Award size={18} />
                   Certificaciones
                 </button>
               </div>
@@ -122,7 +123,7 @@ export default function AboutSection() {
                               <span className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-semibold text-xs">
                                 {edu.period}
                               </span>
-                              <i className="ri-graduation-cap-line text-xl text-cyan-500 opacity-20 group-hover:opacity-100 transition-all duration-300"></i>
+                              <GraduationCap size={20} className="text-cyan-500 opacity-20 group-hover:opacity-100 transition-all duration-300" />
                             </div>
 
                             <div className="space-y-1">
@@ -169,7 +170,7 @@ export default function AboutSection() {
                               <span className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-semibold text-xs">
                                 {cert.year}
                               </span>
-                              <i className="ri-award-fill text-xl text-cyan-500 opacity-20 group-hover:opacity-100 transition-all duration-300"></i>
+                              <Award size={20} className="text-cyan-500 opacity-20 group-hover:opacity-100 transition-all duration-300" />
                             </div>
 
                             <div className="space-y-1">

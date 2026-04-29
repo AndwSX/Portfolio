@@ -5,7 +5,7 @@ export interface Project {
   title: string;
   description: string;
   longDescription: string;
-  icon: string;
+  icon: LucideIcon;
   gradient: string;
   image: string;
   tags: string[];
@@ -23,7 +23,7 @@ export interface ExperienceItem {
   description: string;
   achievements: string[];
   technologies: string[];
-  icon: string;
+  icon: LucideIcon;
   color: string;
 }
 
@@ -38,12 +38,12 @@ export interface Experience {
 export interface NavItem {
   id: string;
   label: string;
-  icon: string;
+  icon: LucideIcon;
 }
 
 export interface SocialLink {
   id: string;
-  icon: string;
+  icon: LucideIcon;
   url: string;
   label: string;
 }

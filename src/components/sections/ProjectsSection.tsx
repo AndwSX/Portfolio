@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PROJECTS } from "@/lib/constants";
 import { Modal, ProjectCard } from "@/components/ui/ProjectCard";
 import { Project } from "@/lib/types";
@@ -132,9 +133,9 @@ export default function ProjectsSection() {
       className={`min-h-screen flex items-center justify-center px-4 py-24 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
         }`}
     >
-      <div className="container max-w-7xl mx-auto">
+      <div className="w-full overflow-hidden">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="max-w-7xl mx-auto px-4 text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold font-display mb-4 gradient-text">
             Mis <span className="text-cyan-500">Proyectos</span>
           </h2>
@@ -144,30 +145,38 @@ export default function ProjectsSection() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative">
-          {/* Navigation Buttons */}
+        <div className="relative group">
+          {/* Navigation Buttons - Centered with content width */}
           {PROJECTS.length > 1 && (
-            <>
-              <button
-                onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 glass rounded-full flex items-center justify-center hover:scale-110 hover:border-cyan-500/50 transition-all duration-300 hidden md:flex"
-              >
-                <i className="ri-arrow-left-s-line text-2xl"></i>
-              </button>
+            <div className="absolute inset-0 pointer-events-none z-20">
+              <div className="max-w-7xl mx-auto h-full px-4 relative">
+                {/* Left Button */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 pointer-events-auto hidden md:block">
+                  <button
+                    onClick={handlePrev}
+                    className="w-12 h-12 glass rounded-full flex items-center justify-center hover:scale-110 hover:border-cyan-500/50 transition-all duration-300 shadow-lg"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                </div>
 
-              <button
-                onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 glass rounded-full flex items-center justify-center hover:scale-110 hover:border-cyan-500/50 transition-all duration-300 hidden md:flex"
-              >
-                <i className="ri-arrow-right-s-line text-2xl"></i>
-              </button>
-            </>
+                {/* Right Button */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 pointer-events-auto hidden md:block">
+                  <button
+                    onClick={handleNext}
+                    className="w-12 h-12 glass rounded-full flex items-center justify-center hover:scale-110 hover:border-cyan-500/50 transition-all duration-300 shadow-lg"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                </div>
+              </div>
+            </div>
           )}
 
           {/* Carousel */}
           <div
             ref={scrollContainerRef}
-            className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar pb-8 cursor-grab active:cursor-grabbing"
+            className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar pt-12 pb-8 cursor-grab active:cursor-grabbing px-[7.5vw] md:px-[calc(50vw-200px)] lg:px-[calc(50vw-225px)]"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -176,7 +185,7 @@ export default function ProjectsSection() {
             {PROJECTS.map((project, index) => (
               <div
                 key={project.id}
-                className="snap-center flex-shrink-0 first:ml-[calc(50vw-225px)] last:mr-[calc(50vw-225px)]"
+                className="snap-center flex-shrink-0"
                 onClick={() => setExpandedProject(project)}
               >
                 <div className="project-card">
@@ -190,24 +199,26 @@ export default function ProjectsSection() {
           </div>
 
           {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-8">
-            {PROJECTS.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setIsPaused(true);
-                  scrollToProject(index);
-                  setTimeout(() => setIsPaused(false), 3000);
-                }}
-                className={`
-                  h-2 rounded-full transition-all duration-300
-                  ${index === currentIndex
-                    ? "w-8 bg-cyan-500"
-                    : "w-2 bg-gray-300 dark:bg-gray-700 hover:bg-cyan-400"
-                  }
-                `}
-              />
-            ))}
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex justify-center gap-2 mt-8">
+              {PROJECTS.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setIsPaused(true);
+                    scrollToProject(index);
+                    setTimeout(() => setIsPaused(false), 3000);
+                  }}
+                  className={`
+                    h-2 rounded-full transition-all duration-300
+                    ${index === currentIndex
+                      ? "w-8 bg-cyan-500"
+                      : "w-2 bg-gray-300 dark:bg-gray-700 hover:bg-cyan-400"
+                    }
+                  `}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

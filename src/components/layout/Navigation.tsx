@@ -3,6 +3,7 @@
 import { useTheme } from '@/hooks/useTheme'
 import { useActiveSection, scrollToSection } from '@/hooks/useActiveSection'
 import { NAV_ITEMS } from '@/lib/constants'
+import { Sun, Moon } from 'lucide-react'
 
 export default function Navigation() {
   const { isDark, toggleTheme } = useTheme()
@@ -21,7 +22,7 @@ export default function Navigation() {
                 : 'hover:bg-gray-200 dark:hover:bg-gray-700'
             }`}
           >
-            <i className={item.icon}></i>
+            <item.icon size={16} />
             <span className="hidden sm:inline">{item.label}</span>
           </button>
         ))}
@@ -33,7 +34,7 @@ export default function Navigation() {
           className="p-2.5 rounded-full text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
           aria-label="Toggle theme"
         >
-          <i className={`text-lg ${isDark ? 'ri-sun-line' : 'ri-moon-line'}`}></i>
+          {isDark ? <Sun size={18} /> : <Moon size={18} />}
         </button>
       </div>
     </nav>

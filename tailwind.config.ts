@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
+        sans: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
+        display: ['var(--font-outfit)', 'Outfit', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
