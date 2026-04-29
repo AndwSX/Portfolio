@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Briefcase, Download, Mail } from 'lucide-react';
 
 import { EXPERIENCES } from "@/lib/constants";
 import { ExperienceTimeline } from "@/components/ui/ExperienceCard";
@@ -76,23 +77,23 @@ export default function ExperienceSection() {
         <div className="mt-16 text-center">
           <div className="glass-strong rounded-3xl p-8 md:p-12 max-w-3xl mx-auto space-y-6">
             <div className="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
-              <i className="ri-briefcase-line text-3xl text-white"></i>
+              <Briefcase size={30} className="text-white" />
             </div>
             <h3 className="text-2xl md:text-3xl font-bold font-display">¿Buscas talento?</h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
               Estoy abierto a nuevas oportunidades y colaboraciones interesantes.
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-4">
-              <a 
-                href="/docs/CV_Andres_Ortiz_2026.pdf" 
+              <a
+                href="/docs/CV_Andres_Ortiz_2026.pdf"
                 download
                 className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2"
               >
-                <i className="ri-download-line"></i>
+                <Download size={16} />
                 Descargar CV
               </a>
               <button className="glass px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:border-cyan-500/50 flex items-center gap-2">
-                <i className="ri-mail-line"></i>
+                <Mail size={16} />
                 Contactar
               </button>
             </div>

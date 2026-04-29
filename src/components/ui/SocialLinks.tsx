@@ -15,17 +15,20 @@ export default function SocialLinks({ showLabel = true }: SocialLinksProps) {
         </p>
       )}
       <div className="flex gap-4">
-        {SOCIAL_LINKS.slice(0, 3).map((social) => (
-          <a
-            key={social.id}
-            href={social.url}
-            target='_blank'
-            className="w-12 h-12 rounded-xl glass flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 hover:shadow-glow hover:text-cyan-500"
-            aria-label={social.label}
-          >
-            <i className={social.icon}></i>
-          </a>
-        ))}
+        {SOCIAL_LINKS.slice(0, 3).map((social) => {
+          const Icon = social.icon;
+          return (
+            <a
+              key={social.id}
+              href={social.url}
+              target='_blank'
+              className="w-12 h-12 rounded-xl glass flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 hover:shadow-glow hover:text-cyan-500"
+              aria-label={social.label}
+            >
+              <Icon size={20} />
+            </a>
+          );
+        })}
       </div>
     </div>
   )

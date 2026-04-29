@@ -1,5 +1,8 @@
+'use client'
+
 import { useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar, MapPin, Trophy, Check, ChevronUp, ChevronDown } from 'lucide-react';
 import { ExperienceItem } from "@/lib/types";
 import { EXPERIENCES } from "@/lib/constants";
 
@@ -54,7 +57,7 @@ export function ExperienceTimeline({ experience, index, isActive, onClick }: Exp
                   flex items-center justify-center transition-transform duration-300
                   ${isActive ? 'scale-110' : 'group-hover:scale-105'}
                 `}>
-                  <i className={`${experience.icon} text-2xl text-white`}></i>
+                  {(() => { const Icon = experience.icon; return <Icon size={24} className="text-white" />; })()}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">{experience.position}</h3>
@@ -67,11 +70,11 @@ export function ExperienceTimeline({ experience, index, isActive, onClick }: Exp
           {/* Period and location */}
           <div className="flex flex-wrap gap-3 mb-4">
             <span className="px-3 py-1 glass rounded-lg text-xs font-medium flex items-center gap-1">
-              <i className="ri-calendar-line"></i>
+              <Calendar size={12} />
               {experience.period}
             </span>
             <span className="px-3 py-1 glass rounded-lg text-xs font-medium flex items-center gap-1">
-              <i className="ri-map-pin-line"></i>
+              <MapPin size={12} />
               {experience.location}
             </span>
           </div>
@@ -94,13 +97,13 @@ export function ExperienceTimeline({ experience, index, isActive, onClick }: Exp
                 {/* Achievements */}
                 <div className="space-y-3 mb-4 pt-4 border-t border-gray-200 dark:border-gray-800">
                   <h4 className="text-sm font-semibold text-cyan-500 flex items-center gap-2">
-                    <i className="ri-trophy-line"></i>
+                    <Trophy size={14} />
                     Logros destacados
                   </h4>
                   <ul className="space-y-2">
                     {experience.achievements.map((achievement, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <i className="ri-check-line text-cyan-500 mt-0.5"></i>
+                        <Check size={14} className="text-cyan-500 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-600 dark:text-gray-400">{achievement}</span>
                       </li>
                     ))}
@@ -131,12 +134,12 @@ export function ExperienceTimeline({ experience, index, isActive, onClick }: Exp
               {isActive ? (
                 <>
                   <span>Ver menos</span>
-                  <i className="ri-arrow-up-s-line"></i>
+                  <ChevronUp size={14} />
                 </>
               ) : (
                 <>
                   <span>Ver más detalles</span>
-                  <i className="ri-arrow-down-s-line"></i>
+                  <ChevronDown size={14} />
                 </>
               )}
             </button>

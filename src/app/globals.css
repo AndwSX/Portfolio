@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,23 +5,31 @@
 /* Glass effect styles - Optimized for performance */
 @layer components {
   .glass {
-    @apply bg-white/10 backdrop-blur-[10px] border border-white/30;
-    will-change: transform;
+    @apply bg-white/60 backdrop-blur-[6px] md:backdrop-blur-[10px] border border-black/10;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, backdrop-filter;
   }
 
   .dark .glass {
-    @apply bg-black/10 backdrop-blur-[10px] border border-white/10;
-    will-change: transform;
+    @apply bg-black/10 backdrop-blur-[6px] md:backdrop-blur-[10px] border border-white/10;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, backdrop-filter;
   }
 
   .glass-strong {
-    @apply bg-white/5 backdrop-blur-[12px] border border-white/40;
-    will-change: transform;
+    @apply bg-white/70 backdrop-blur-[8px] md:backdrop-blur-[12px] border border-black/15 shadow-sm;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, backdrop-filter;
   }
 
   .dark .glass-strong {
-    @apply bg-black/5 backdrop-blur-[12px] border border-white/15;
-    will-change: transform;
+    @apply bg-black/5 backdrop-blur-[8px] md:backdrop-blur-[12px] border border-white/15;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, backdrop-filter;
   }
 
   /* Gradient text */

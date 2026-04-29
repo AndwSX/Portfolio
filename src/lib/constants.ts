@@ -1,6 +1,6 @@
 import { NavItem, Project, ExperienceItem, SocialLink, Certificate, Education } from './types';
-import { Zap, Target, Rocket, Code2, Database, Palette, Bug, Users, Settings } from "lucide-react";
-import { } from "lucide-react";
+import { Zap, Target, Rocket, Code2, Database, Settings, Users, Home, User, Wrench, FolderOpen, Briefcase, Linkedin, Github, Mail, ChartPie } from "lucide-react";
+
 import {
   JavaScriptIcon,
   TypeScriptIcon,
@@ -31,11 +31,11 @@ import {
 } from "@/components/ui/icons/TechIcons";
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'inicio', label: 'Inicio', icon: 'ri-home-line' },
-  { id: 'acerca', label: 'Acerca', icon: 'ri-user-line' },
-  { id: 'skills', label: 'Habilidades', icon: 'ri-tools-line' },
-  { id: 'proyectos', label: 'Proyectos', icon: 'ri-folder-line' },
-  { id: 'experiencia', label: 'Experiencia', icon: 'ri-briefcase-line' },
+  { id: 'inicio', label: 'Inicio', icon: Home },
+  { id: 'acerca', label: 'Acerca', icon: User },
+  { id: 'skills', label: 'Habilidades', icon: Wrench },
+  { id: 'proyectos', label: 'Proyectos', icon: FolderOpen },
+  { id: 'experiencia', label: 'Experiencia', icon: Briefcase },
 ];
 
 export const HERO_ANIMATED_TEXTS = [
@@ -46,9 +46,9 @@ export const HERO_ANIMATED_TEXTS = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { id: 'linkedin', icon: 'ri-linkedin-line', url: 'https://www.linkedin.com/in/afortizdev/', label: 'LinkedIn' },
-  { id: 'github', icon: 'ri-github-line', url: 'https://github.com/AndwSX', label: 'GitHub' },
-  { id: 'email', icon: 'ri-mail-line', url: 'mailto:ortiz.andw@gmail.com', label: 'Email' },
+  { id: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/afortizdev/', label: 'LinkedIn' },
+  { id: 'github', icon: Github, url: 'https://github.com/AndwSX', label: 'GitHub' },
+  { id: 'email', icon: Mail, url: 'mailto:ortiz.andw@gmail.com', label: 'Email' },
 ];
 
 export const PROJECTS: Project[] = [
@@ -57,26 +57,26 @@ export const PROJECTS: Project[] = [
     title: 'Diventracker',
     description: 'Sistema de gestión de ventas y servicios técnicos para negocios de tecnología.',
     longDescription: 'Aplicación web completa para gestión de ventas y seguimiento de servicios técnicos. Incluye autenticación con roles (administrador/técnico), CRUD de clientes, usuarios y productos, dashboard con métricas, gestión de imágenes, y sistema de seguimiento de estados del servicio técnico (en progreso, finalizado, completado, en revisión).',
-    icon: 'ri-tools-fill',
+    icon: Wrench,
     gradient: 'from-green-400 to-cyan-500',
-    //1788 × 640 | 2682 × 960 la resolucion de la imagen
-    image: '/images/diventracker.png',
-    tags: ['FastAPI', 'Jinja2', 'Bootstrap', 'MySQL', 'JavaScript', 'AJAX', 'Chart.js', 'DataTables'],
+    //1920x1080 debe ser la resolucion para que se vea bien
+    image: '/images/diventracker.webp',
+    tags: ['FastAPI', 'Jinja2', 'Bootstrap', 'REST API', 'MySQL', 'JavaScript', 'AJAX / Fetch', 'Chart.js', 'DataTables', 'Data Analysis', 'Reports'],
     github: 'https://github.com/Diventracker/Diven',
     demo: '#'
   },
-  // {
-  //   id: 2,
-  //   title: 'TREEJS',
-  //   description: 'Aplicación web interactiva con animaciones 3D creadas con Three.JS.',
-  //   longDescription: 'Experiencia inmersiva 3D con física en tiempo real, partículas interactivas y shaders personalizados para crear visualizaciones impactantes.',
-  //   icon: 'ri-box-3-fill',
-  //   gradient: 'from-blue-400 to-purple-500',
-  //   image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop',
-  //   tags: ['Three.js', 'JavaScript', 'WebGL', '3D'],
-  //   github: '#',
-  //   demo: '#'
-  // },
+  {
+    id: 2,
+    title: 'Survey Analytics Dashboard',
+    description: 'Sistema de encuestas con autenticación y dashboard de análisis de resultados.',
+    longDescription: 'Aplicación web orientada a la gestión de encuestas de satisfacción. Permite el registro de usuarios con validación de habeas data, autenticación de usuarios registrados y envío de encuestas personalizadas. Incluye un dashboard interactivo para el análisis de resultados con métricas visuales, gráficos dinámicos y exportación de datos a Excel. Diseñado para facilitar la toma de decisiones basada en datos.',
+    icon: ChartPie,
+    gradient: 'from-blue-400 to-indigo-500',
+    image: '/images/survey.webp',
+    tags: ['PHP', 'PostgreSQL', 'JavaScript', 'Tailwind CSS', 'Chart.js', 'ExcelJS', 'REST API', 'AJAX / Fetch', 'Remix Icon', 'Data Analysis', 'Mobile First'],
+    github: 'https://github.com/AndwSX/SurveyAnalytics-Dashboard',
+    demo: '#'
+  }
   // {
   //   id: 3,
   //   title: 'Entropy Evolve',
@@ -174,7 +174,7 @@ export const CERTIFICATES: Certificate[] = [
     title: "Bootcamp Agentes IA: Chatbots Inteligentes",
     institution: "Udemy",
     year: "2025",
-    topics: ["IA", "Chatbots", "Python"]
+    topics: ["IA", "Chatbots", "Python", "AgentsAI"]
   },
   {
     title: "Introduction to C#",
@@ -225,7 +225,7 @@ export const EXPERIENCES: ExperienceItem[] = [
       'Participe en el desarrollo de un sistema de pausas activas obligatorias con C#, API en PHP y PostgreSQL'
     ],
     technologies: ['Python', 'FastAPI', 'PHP', 'C#', 'JavaScript', 'TypeScript', 'React', 'Vue.js', 'Electron', 'Express', 'Node.js', 'PostgreSQL', 'MySQL', 'Tailwind CSS', 'Bootstrap', 'Chart.js', 'DataTables', 'Docker', 'Git', 'Linux', 'FTP', 'Paramiko', 'Tkinter', 'AJAX'],
-    icon: 'ri-code-s-slash-line',
+    icon: Code2,
     color: 'from-cyan-500 to-blue-500'
   },
   // {

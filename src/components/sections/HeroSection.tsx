@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Terminal, ArrowRight, Download } from "lucide-react";
 import SocialLinks from "@/components/ui/SocialLinks";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { HERO_ANIMATED_TEXTS } from "@/lib/constants";
-
 
 
 export default function HeroSection() {
@@ -63,7 +63,7 @@ export default function HeroSection() {
 
               {/* Terminal con efecto de escritura */}
               <div className="glass inline-flex items-center gap-2 font-mono text-sm px-4 py-3 rounded-2xl border border-gray-300/50 dark:border-gray-700/50">
-                <i className="ri-terminal-line text-cyan-500"></i>
+                <Terminal size={16} className="text-cyan-500" />
                 <span className="min-h-[20px]">
                   {displayText}
                   <span className="text-cyan-500 animate-[pulse_1s_ease-in-out_infinite]">
@@ -79,22 +79,22 @@ export default function HeroSection() {
                 Desarrollador de Software,
               </span>{" "}
               especializado en automatización de procesos
-              empresariales. Diseño y desarrollo soluciones web que optimizan tareas 
-              manuales y mejoran la eficiencia operativa, utilizando tecnologías 
+              empresariales. Diseño y desarrollo soluciones web que optimizan tareas
+              manuales y mejoran la eficiencia operativa, utilizando tecnologías
               como Python, FastAPI, React y PostgreSQL.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <button className="glass-strong group px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
                 Hablemos
-                <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <a 
-                href="/docs/CV_Andres_Ortiz_2026.pdf" 
+              <a
+                href="/docs/CV_Andres_Ortiz_2026.pdf"
                 download
                 className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2"
               >
-                <i className="ri-download-line"></i>
+                <Download size={16} />
                 Descargar CV
               </a>
             </div>
