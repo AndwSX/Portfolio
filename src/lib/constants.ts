@@ -59,9 +59,9 @@ export const PROJECTS: Project[] = [
     longDescription: 'Aplicación web completa para gestión de ventas y seguimiento de servicios técnicos. Incluye autenticación con roles (administrador/técnico), CRUD de clientes, usuarios y productos, dashboard con métricas, gestión de imágenes, y sistema de seguimiento de estados del servicio técnico (en progreso, finalizado, completado, en revisión).',
     icon: Wrench,
     gradient: 'from-green-400 to-cyan-500',
-    //1788 × 640 | 2682 × 960 la resolucion de la imagen
-    image: '/images/diventracker.png',
-    tags: ['FastAPI', 'Jinja2', 'Bootstrap', 'MySQL', 'JavaScript', 'AJAX', 'Chart.js', 'DataTables'],
+    //1920x1080 debe ser la resolucion para que se vea bien
+    image: '/images/diventracker.webp',
+    tags: ['FastAPI', 'Jinja2', 'Bootstrap', 'REST API', 'MySQL', 'JavaScript', 'AJAX / Fetch', 'Chart.js', 'DataTables', 'Data Analysis', 'Reports'],
     github: 'https://github.com/Diventracker/Diven',
     demo: '#'
   },
@@ -72,8 +72,8 @@ export const PROJECTS: Project[] = [
     longDescription: 'Aplicación web orientada a la gestión de encuestas de satisfacción. Permite el registro de usuarios con validación de habeas data, autenticación de usuarios registrados y envío de encuestas personalizadas. Incluye un dashboard interactivo para el análisis de resultados con métricas visuales, gráficos dinámicos y exportación de datos a Excel. Diseñado para facilitar la toma de decisiones basada en datos.',
     icon: ChartPie,
     gradient: 'from-blue-400 to-indigo-500',
-    image: '/images/survey-dashboard.png',
-    tags: ['React', 'Next.js', 'Node.js', 'MySQL', 'Chart.js', 'Data Analysis', 'Excel Export'],
+    image: '/images/survey.webp',
+    tags: ['PHP', 'PostgreSQL', 'JavaScript', 'Tailwind CSS', 'Chart.js', 'ExcelJS', 'REST API', 'AJAX / Fetch', 'Remix Icon', 'Data Analysis', 'Mobile First'],
     github: 'https://github.com/AndwSX/SurveyAnalytics-Dashboard',
     demo: '#'
   }
@@ -174,7 +174,7 @@ export const CERTIFICATES: Certificate[] = [
     title: "Bootcamp Agentes IA: Chatbots Inteligentes",
     institution: "Udemy",
     year: "2025",
-    topics: ["IA", "Chatbots", "Python"]
+    topics: ["IA", "Chatbots", "Python", "AgentsAI"]
   },
   {
     title: "Introduction to C#",

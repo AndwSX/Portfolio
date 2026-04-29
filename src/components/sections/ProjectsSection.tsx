@@ -145,7 +145,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative group">
+        <div className="relative">
           {/* Navigation Buttons - Centered with content width */}
           {PROJECTS.length > 1 && (
             <div className="absolute inset-0 pointer-events-none z-20">

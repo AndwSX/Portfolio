@@ -29,7 +29,7 @@ export function ProjectCard({ project, isActive, onClick }: ProjectCardProps) {
       `}
     >
       {/* Image Header */}
-      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-800 dark:to-gray-900">
+      <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-800 dark:to-gray-900">
         <Image 
           src={project.image} 
           alt={project.title}
@@ -114,7 +114,7 @@ export function Modal({ project, onClose }: ModalProps) {
         </button>
 
         {/* Large Image */}
-        <div className="relative h-64 md:h-80 overflow-hidden">
+        <div className="relative aspect-video overflow-hidden">
           <Image 
             src={project.image} 
             alt={project.title}
