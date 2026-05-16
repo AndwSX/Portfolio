@@ -1,5 +1,5 @@
 import { NavItem, Project, ExperienceItem, SocialLink, Certificate, Education } from './types';
-import { Zap, Target, Rocket, Code2, Database, Settings, Users, Home, User, Wrench, FolderOpen, Briefcase, Linkedin, Github, Mail, ChartPie } from "lucide-react";
+import { Zap, Target, Rocket, Code2, Database, Settings, Users, Home, User, Wrench, FolderOpen, Briefcase, Linkedin, Wallet, Github, Mail, ChartPie } from "lucide-react";
 
 import {
   JavaScriptIcon,
@@ -54,53 +54,77 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const PROJECTS: Project[] = [
   {
     id: 1,
+    title: 'Mortincho',
+    description: 'Sistema web de gestión de inventario, ventas y control financiero para pequeños negocios.',
+    longDescription: 'Aplicación web full stack desarrollada para la administración de inventario, ventas y movimientos financieros de un negocio. Incluye autenticación segura con JWT, control de usuarios, gestión de productos, inventario, ventas, pagos y módulos financieros como ingresos, gastos, préstamos y deudas. El sistema permite llevar trazabilidad de movimientos de saldo y control del capital del negocio en tiempo real. Desplegado con Angular en Vercel, FastAPI en Render y PostgreSQL en Supabase.',
+    icon: Wallet,
+    gradient: 'from-orange-400 to-red-500',
+    images: [
+      '/images/mortincho/1.webp',
+      '/images/mortincho/2.webp',
+      '/images/mortincho/3.webp',
+      '/images/mortincho/4.webp',
+    ],
+    tags: ['Angular', 'FastAPI', 'TypeScript', 'Python', 'PostgreSQL', 'Supabase', 'Render', 'Vercel', 'SQLAlchemy', 'JWT Authentication', 'REST API', 'TailwindCSS', 'JavaScript', 'Financial Management', 'Inventory System'],
+    features: [
+      'Autenticación segura con JWT y control de roles',
+      'Gestión de inventario y productos en tiempo real',
+      'Módulo financiero: ingresos, gastos, préstamos y deudas',
+      'Trazabilidad de movimientos de saldo y capital',
+      'Dashboard con métricas y KPIs del negocio',
+      'Desplegado en Vercel, Render y Supabase',
+    ],
+    github: 'https://github.com/AndwSX/mortincho',
+    demo: 'https://mortincho.vercel.app/auth/login'
+  },
+  {
+    id: 2,
     title: 'Diventracker',
     description: 'Sistema de gestión de ventas y servicios técnicos para negocios de tecnología.',
     longDescription: 'Aplicación web completa para gestión de ventas y seguimiento de servicios técnicos. Incluye autenticación con roles (administrador/técnico), CRUD de clientes, usuarios y productos, dashboard con métricas, gestión de imágenes, y sistema de seguimiento de estados del servicio técnico (en progreso, finalizado, completado, en revisión).',
     icon: Wrench,
     gradient: 'from-green-400 to-cyan-500',
     //1920x1080 debe ser la resolucion para que se vea bien
-    image: '/images/diventracker.webp',
+    images: [
+      '/images/diventracker/1.webp',
+      // '/images/diventracker/2.webp', // agrega aquí más capturas cuando las tengas
+    ],
     tags: ['FastAPI', 'Jinja2', 'Bootstrap', 'REST API', 'MySQL', 'JavaScript', 'AJAX / Fetch', 'Chart.js', 'DataTables', 'Data Analysis', 'Reports'],
+    features: [
+      'Autenticación con roles: administrador y técnico',
+      'CRUD completo de clientes, usuarios y productos',
+      'Gestión de imágenes de productos',
+      'Dashboard con métricas y gráficos (Chart.js)',
+      'Seguimiento de estados del servicio técnico',
+      'Reportes y tablas interactivas con DataTables',
+    ],
     github: 'https://github.com/Diventracker/Diven',
     demo: '#'
   },
   {
-    id: 2,
+    id: 3,
     title: 'Survey Analytics Dashboard',
     description: 'Sistema de encuestas con autenticación y dashboard de análisis de resultados.',
     longDescription: 'Aplicación web orientada a la gestión de encuestas de satisfacción. Permite el registro de usuarios con validación de habeas data, autenticación de usuarios registrados y envío de encuestas personalizadas. Incluye un dashboard interactivo para el análisis de resultados con métricas visuales, gráficos dinámicos y exportación de datos a Excel. Diseñado para facilitar la toma de decisiones basada en datos.',
     icon: ChartPie,
     gradient: 'from-blue-400 to-indigo-500',
-    image: '/images/survey.webp',
+    images: [
+      '/images/survey/1.webp',
+      '/images/survey/2.webp',
+      '/images/survey/3.webp',
+    ],
     tags: ['PHP', 'PostgreSQL', 'JavaScript', 'Tailwind CSS', 'Chart.js', 'ExcelJS', 'REST API', 'AJAX / Fetch', 'Remix Icon', 'Data Analysis', 'Mobile First'],
+    features: [
+      'Registro de usuarios con validación de habeas data',
+      'Autenticación segura de usuarios registrados',
+      'Envío de encuestas de satisfacción personalizadas',
+      'Dashboard interactivo con métricas y gráficos',
+      'Exportación de resultados a Excel con ExcelJS',
+      'Diseño Mobile First y responsive',
+    ],
     github: 'https://github.com/AndwSX/SurveyAnalytics-Dashboard',
     demo: '#'
-  }
-  // {
-  //   id: 3,
-  //   title: 'Entropy Evolve',
-  //   description: 'Sistema de automejora para agentes de IA, diseñado para dominios complejos con ingeniería de software.',
-  //   longDescription: 'Framework experimental de ML que permite a los agentes optimizar sus propios algoritmos mediante técnicas de meta-aprendizaje y evolución de arquitecturas.',
-  //   icon: 'ri-robot-fill',
-  //   gradient: 'from-cyan-400 to-blue-500',
-  //   image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
-  //   tags: ['Python', 'AI', 'Machine Learning'],
-  //   github: '#',
-  //   demo: '#'
-  // },
-  // {
-  //   id: 4,
-  //   title: 'Portfolio Web',
-  //   description: 'Sitio web personal moderno con animaciones fluidas y diseño responsive.',
-  //   longDescription: 'Portfolio interactivo construido con las últimas tecnologías web, featuring smooth scrolling, dark mode, y animaciones personalizadas.',
-  //   icon: 'ri-global-line',
-  //   gradient: 'from-purple-400 to-pink-500',
-  //   image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-  //   tags: ['React', 'Next.js', 'Tailwind', 'Framer Motion'],
-  //   github: '#',
-  //   demo: '#'
-  // }
+  },  
 ];
 
 export const SKILLS = {
@@ -186,7 +210,7 @@ export const CERTIFICATES: Certificate[] = [
 
 export const EDUCATION: Education[] = [
   {
-    degree: "Análisis y Desarrollo de Software",
+    degree: "Tecnólogo en Análisis y Desarrollo de Software",
     institution: "SENA Centro de Diseño y Metrología",
     period: "2023 - 2026",
     description: "Enfoque en desarrollo de software y arquitectura de sistemas",

@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { Project } from '@/lib/types'
-import { ArrowRight, X, Check, ExternalLink, Github } from 'lucide-react';
+import { ArrowRight, X, Check, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 
 type ProjectCardProps = {
   project: Project;
@@ -17,7 +17,137 @@ type ModalProps = {
   onClose: () => void;
 };
 
+/* ─────────────────────────────────────────
+   Mini carousel reutilizable
+───────────────────────────────────────── */
+interface CarouselProps {
+  images: string[];
+  alt: string;
+  /** Prioridad de carga (Next/Image) */
+  priority?: boolean;
+  /** Clase extra para el contenedor */
+  className?: string;
+  /** Si true muestra flechas de nav más grandes (modal) */
+  large?: boolean;
+}
+
+function ImageCarousel({ images, alt, priority = false, className = '', large = false }: CarouselProps) {
+  const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const autoRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const goTo = useCallback((index: number) => {
+    if (isAnimating || images.length <= 1) return;
+    setIsAnimating(true);
+    setCurrent(index);
+    setTimeout(() => setIsAnimating(false), 400);
+  }, [isAnimating, images.length]);
+
+  const prev = useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    goTo((current - 1 + images.length) % images.length);
+  }, [current, goTo, images.length]);
+
+  const next = useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    goTo((current + 1) % images.length);
+  }, [current, goTo, images.length]);
+
+  // Auto-play solo si hay más de una imagen
+  useEffect(() => {
+    if (images.length <= 1) return;
+    autoRef.current = setTimeout(() => next(), 4000);
+    return () => { if (autoRef.current) clearTimeout(autoRef.current); };
+  }, [current, images.length, next]);
+
+  if (!images || images.length === 0) return null;
+
+  const arrowBase = `
+    absolute top-1/2 -translate-y-1/2 z-10
+    flex items-center justify-center
+    rounded-full backdrop-blur-sm
+    bg-black/40 border border-white/10
+    text-white opacity-0 group-hover:opacity-100
+    transition-all duration-200
+    hover:bg-black/60 hover:scale-110
+  `;
+  const arrowSize = large ? 'w-9 h-9' : 'w-7 h-7';
+  const iconSize  = large ? 20 : 16;
+
+  return (
+    <div className={`relative w-full h-full overflow-hidden ${className}`}>
+      {/* Slides */}
+      {images.map((src, i) => (
+        <div
+          key={src}
+          className={`absolute inset-0 transition-opacity duration-400 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+          aria-hidden={i !== current}
+        >
+          <Image
+            src={src}
+            alt={`${alt} – ${i + 1}`}
+            fill
+            sizes={
+              large
+                ? "(max-width: 768px) 100vw, 896px"
+                : "(max-width: 768px) 85vw, (max-width: 1024px) 400px, 450px"
+            }
+            quality={90}
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            priority={priority && i === 0}
+          />
+        </div>
+      ))}
+
+      {/* Flechas (solo si hay más de 1 imagen) */}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={prev}
+            aria-label="Imagen anterior"
+            className={`${arrowBase} ${arrowSize} left-2`}
+          >
+            <ChevronLeft size={iconSize} />
+          </button>
+          <button
+            onClick={next}
+            aria-label="Siguiente imagen"
+            className={`${arrowBase} ${arrowSize} right-2`}
+          >
+            <ChevronRight size={iconSize} />
+          </button>
+        </>
+      )}
+
+      {/* Indicadores de puntos */}
+      {images.length > 1 && (
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={(e) => { e.stopPropagation(); goTo(i); }}
+              aria-label={`Ir a imagen ${i + 1}`}
+              className={`
+                rounded-full transition-all duration-300
+                ${i === current
+                  ? 'bg-white w-4 h-1.5'
+                  : 'bg-white/40 w-1.5 h-1.5 hover:bg-white/70'}
+              `}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────
+   ProjectCard
+───────────────────────────────────────── */
 export function ProjectCard({ project, isActive, onClick }: ProjectCardProps) {
+  // Soporte retrocompatible: usa `images` si existe, sino crea array desde `image`
+  const images = project.images?.length ? project.images : (project.image ? [project.image] : []);
+
   return (
     <div
       onClick={onClick}
@@ -28,20 +158,15 @@ export function ProjectCard({ project, isActive, onClick }: ProjectCardProps) {
         hover:scale-105 hover:opacity-100 hover:shadow-glow cursor-pointer
       `}
     >
-      {/* Image Header */}
+      {/* Image Header — Carrusel */}
       <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-800 dark:to-gray-900">
-        <Image 
-          src={project.image} 
-          alt={project.title}
-          fill
-          sizes="(max-width: 768px) 85vw, (max-width: 1200px) 400px, 450px"
-          className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
-          priority={project.id <= 2}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        
+        <ImageCarousel images={images} alt={project.title} priority={project.id <= 2} />
+
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-[1]" />
+
         {/* Icon floating */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 z-[2]">
           <div className="w-12 h-12 glass rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             {(() => { const Icon = project.icon; return <Icon size={24} className="text-cyan-400" />; })()}
           </div>
@@ -82,8 +207,14 @@ export function ProjectCard({ project, isActive, onClick }: ProjectCardProps) {
   );
 }
 
+/* ─────────────────────────────────────────
+   Modal
+───────────────────────────────────────── */
 export function Modal({ project, onClose }: ModalProps) {
   const [mounted, setMounted] = useState(false);
+
+  // Soporte retrocompatible
+  const images = project.images?.length ? project.images : (project.image ? [project.image] : []);
 
   useEffect(() => {
     setMounted(true);
@@ -101,7 +232,7 @@ export function Modal({ project, onClose }: ModalProps) {
       onClick={onClose}
     >
       <div 
-        className="rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-up bg-white dark:bg-black border border-gray-200/50 dark:border-white/10 relative shadow-2xl"
+        className="rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-up bg-white dark:bg-black border border-gray-200/50 dark:border-white/10 relative shadow-2xl [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         style={{ willChange: 'transform, opacity' }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -113,18 +244,13 @@ export function Modal({ project, onClose }: ModalProps) {
           <X size={20} className="text-gray-800 dark:text-white" />
         </button>
 
-        {/* Large Image */}
-        <div className="relative aspect-video overflow-hidden">
-          <Image 
-            src={project.image} 
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-          
+        {/* Large Image Carousel */}
+        <div className="group relative aspect-video overflow-hidden">
+          <ImageCarousel images={images} alt={project.title} priority large />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none z-[1]" />
+
           {/* Icon en modal */}
-          <div className="absolute bottom-6 left-6">
+          <div className="absolute bottom-6 left-6 z-[2]">
             <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center bg-white/20 dark:bg-black/40">
               {(() => { const Icon = project.icon; return <Icon size={30} className="text-cyan-400" />; })()}
             </div>
@@ -155,28 +281,26 @@ export function Modal({ project, onClose }: ModalProps) {
           </div>
 
           {/* Features/Details Section */}
-          <div className="rounded-2xl p-6 space-y-4 bg-gray-50 dark:bg-black/20 border border-gray-200/50 dark:border-white/10">
-            <h3 className="text-xl font-bold text-cyan-600 dark:text-cyan-500">Características destacadas</h3>
-            <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-              <li className="flex items-start gap-2">
-                <Check size={14} className="text-cyan-500 mt-1 flex-shrink-0" />
-                <span>Arquitectura escalable y modular</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check size={14} className="text-cyan-500 mt-1 flex-shrink-0" />
-                <span>Implementación de mejores prácticas</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check size={14} className="text-cyan-500 mt-1 flex-shrink-0" />
-                <span>Diseño responsive y accesible</span>
-              </li>
-            </ul>
-          </div>
+          {project.features?.length > 0 && (
+            <div className="rounded-2xl p-6 space-y-4 bg-gray-50 dark:bg-black/20 border border-gray-200/50 dark:border-white/10">
+              <h3 className="text-xl font-bold text-cyan-600 dark:text-cyan-500">Características destacadas</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-700 dark:text-gray-300">
+                {project.features.map((feat) => (
+                  <li key={feat} className="flex items-start gap-2">
+                    <Check size={14} className="text-cyan-500 mt-1 flex-shrink-0" />
+                    <span className="text-sm leading-snug">{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Action Buttons */}
           <div className="flex gap-4 pt-4">
             <a
               href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center justify-center gap-2"
               onClick={(e) => e.stopPropagation()}
             >
