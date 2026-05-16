@@ -28,7 +28,7 @@ export default function AboutSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse"></div>
                 <div className="relative glass-strong rounded-3xl p-8 shadow-2xl animate-float overflow-hidden">
                   <div className="w-full aspect-square bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl flex items-center justify-center">
-                    <FileImage size={96} className="text-blue-500/30" />
+                    <img src="/images/Andres.jpeg" alt="Andres Ortiz"/>
                   </div>
                 </div>
               </div>

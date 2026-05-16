@@ -7,7 +7,12 @@ export interface Project {
   longDescription: string;
   icon: any;
   gradient: string;
-  image: string;
+  /** Array de rutas de imágenes para el carrusel */
+  images: string[];
+  /** @deprecated Usar `images`. Se mantiene por compatibilidad. */
+  image?: string;
+  /** Características destacadas que se muestran en el modal (2 columnas) */
+  features: string[];
   tags: string[];
   github: string;
   demo: string;
