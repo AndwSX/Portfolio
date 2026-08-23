@@ -76,12 +76,18 @@ export default function HeroSection() {
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
               Soy un{" "}
               <span className="font-semibold text-gray-900 dark:text-gray-100">
-                Desarrollador de Software,
+                Desarrollador de Software
               </span>{" "}
-              especializado en automatización de procesos
-              empresariales. Diseño y desarrollo soluciones web que optimizan tareas
-              manuales y mejoran la eficiencia operativa, utilizando tecnologías
-              como Python, FastAPI, React y PostgreSQL.
+              con experiencia en desarrollo{" "}
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                Full Stack, automatización de procesos e integración de sistemas.
+              </span>{" "}
+              <br></br>
+              Diseño y desarrollo soluciones web y de escritorio, APIs y herramientas
+              orientadas a resolver problemas reales, utilizando tecnologías como{" "}
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                Python, FastAPI, JavaScript, Next.js, Node.js y PostgreSQL.
+              </span>
             </p>
 
             <div className="flex flex-wrap gap-4">

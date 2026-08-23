@@ -46,12 +46,15 @@ export default function AboutSection() {
                 <div>
                   <h3 className="text-2xl font-semibold mb-3">Andrés Ortiz</h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Desarrollador de Software con experiencia en desarrollo backend,
-                    automatización de procesos e integración de sistemas empresariales.
-                    Cuento con experiencia práctica en SIMETRIC S.A.
-                    desarrollando aplicaciones web, APIs y soluciones enfocadas en la optimización de procesos internos.
-                    Tecnólogo ADSO del SENA, con sólidos conocimientos en Python, FastAPI, React y PostgreSQL para construir soluciones escalables,
-                    eficientes y orientadas al negocio.
+                    Tecnólogo en Análisis y Desarrollo de Software con formación complementaria en Calidad del Software 
+                    y Desarrollo Full Stack. Cuento con experiencia profesional participando en el ciclo completo de desarrollo, 
+                    desde el análisis de requerimientos hasta la implementación, pruebas y mantenimiento de soluciones.
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    He trabajado en proyectos reales para entornos empresariales, desarrollando aplicaciones, APIs, 
+                    automatizaciones e integraciones con bases de datos. Me caracterizo por mi capacidad de análisis, 
+                    aprendizaje rápido, adaptación y orientación al servicio, buscando comprender las 
+                    necesidades del usuario y brindar soluciones funcionales, eficientes y de calidad.
                   </p>
                 </div>
 
