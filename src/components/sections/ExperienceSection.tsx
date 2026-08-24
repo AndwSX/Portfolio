@@ -74,7 +74,7 @@ export default function ExperienceSection() {
         */}
 
         {/* CTA */}
-        <div className="mt-16 text-center">
+        <div id="contacto" className="mt-16 text-center">
           <div className="glass-strong rounded-3xl p-8 md:p-12 max-w-3xl mx-auto space-y-6">
             <div className="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
               <Briefcase size={30} className="text-white" />

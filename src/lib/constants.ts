@@ -39,7 +39,7 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const HERO_ANIMATED_TEXTS = [
-  "const developer = new BackendDev();",
+  "const developer = new FullStackDev();",
   "import { Innovation } from 'creativity';",
   "console.log('Building the future...');",
   "const stack = Python + React + PostgreSQL;",
