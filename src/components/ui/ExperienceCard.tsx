@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, MapPin, Trophy, Check, ChevronUp, ChevronDown } from 'lucide-react';
+import { Calendar, MapPin, Trophy, ChevronUp, ChevronDown } from 'lucide-react';
 import { ExperienceItem } from "@/lib/types";
 import { EXPERIENCES } from "@/lib/constants";
 
@@ -100,14 +100,9 @@ export function ExperienceTimeline({ experience, index, isActive, onClick }: Exp
                     <Trophy size={14} />
                     Logros destacados
                   </h4>
-                  <ul className="space-y-2">
-                    {experience.achievements.map((achievement, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <Check size={14} className="text-cyan-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600 dark:text-gray-400">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {experience.achievements}
+                  </p>
                 </div>
 
                 {/* Technologies */}

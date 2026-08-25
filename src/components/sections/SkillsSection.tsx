@@ -11,7 +11,7 @@ export default function SkillsSection() {
     <section
       ref={targetRef}
       id="skills"
-      className={`min-h-screen flex items-center justify-center px-4 py-80 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
+      className={`min-h-screen flex items-center justify-center px-4 py-24 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
         }`}
     >
       <div className="container max-w-7xl mx-auto">
@@ -30,7 +30,7 @@ export default function SkillsSection() {
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  Tecnologías y herramientas que domino para desarrollar aplicaciones web completas, desde el backend hasta el frontend.
+                  Stack tecnológico utilizado en el desarrollo de soluciones de software.
                 </p>
               </div>
 

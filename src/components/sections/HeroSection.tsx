@@ -5,6 +5,7 @@ import { Terminal, ArrowRight, Download } from "lucide-react";
 import SocialLinks from "@/components/ui/SocialLinks";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { HERO_ANIMATED_TEXTS } from "@/lib/constants";
+import { scrollToSection } from "@/hooks/useActiveSection";
 
 
 export default function HeroSection() {
@@ -76,16 +77,22 @@ export default function HeroSection() {
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
               Soy un{" "}
               <span className="font-semibold text-gray-900 dark:text-gray-100">
-                Desarrollador de Software,
+                Desarrollador de Software
               </span>{" "}
-              especializado en automatización de procesos
-              empresariales. Diseño y desarrollo soluciones web que optimizan tareas
-              manuales y mejoran la eficiencia operativa, utilizando tecnologías
-              como Python, FastAPI, React y PostgreSQL.
+              con experiencia en desarrollo Full Stack, automatización de 
+              procesos e integración de sistemas.
+              <br></br>
+              Diseño y desarrollo soluciones web y de escritorio, APIs y herramientas
+              orientadas a resolver problemas reales, utilizando tecnologías como{" "}
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                Python, FastAPI, React, Next.js, JavaScript, Node.js y PostgreSQL.
+              </span>
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <button className="glass-strong group px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
+              <button
+                onClick={() => scrollToSection('contacto')}
+                className="glass-strong group px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2">
                 Hablemos
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>

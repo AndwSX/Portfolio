@@ -1,34 +1,11 @@
+//types
 import { NavItem, Project, ExperienceItem, SocialLink, Certificate, Education } from './types';
-import { Zap, Target, Rocket, Code2, Database, Settings, Users, Home, User, Wrench, FolderOpen, Briefcase, Linkedin, Wallet, Github, Mail, ChartPie } from "lucide-react";
+//lucide-react
+import { Zap, Trees, Target, Rocket, Code2, Database, Settings, Users, Home, User, Wrench, FolderOpen, Briefcase, Linkedin, Wallet, Github, Mail, ChartPie } from "lucide-react";
+//TechIcons
+import { JavaScriptIcon, CSharpIcon, TypeScriptIcon, ReactIcon, VueIcon, NodeIcon, PostmanIcon, LinuxIcon, PythonIcon, TailwindIcon, GitIcon, DockerIcon, FigmaIcon, NextJSIcon, PostgreSQLIcon, AWSIcon, MongoDBIcon, GraphQLIcon, RedisIcon, FastAPIIcon, PHPIcon, MySQLIcon, AngularIcon, LaravelIcon, ExpressIcon, ElectronIcon, ApacheIcon, FedoraIcon, BootstrapIcon } from "@/components/ui/icons/TechIcons";
 
-import {
-  JavaScriptIcon,
-  TypeScriptIcon,
-  ReactIcon,
-  VueIcon,
-  NodeIcon,
-  PythonIcon,
-  TailwindIcon,
-  GitIcon,
-  DockerIcon,
-  FigmaIcon,
-  NextJSIcon,
-  PostgreSQLIcon,
-  AWSIcon,
-  MongoDBIcon,
-  GraphQLIcon,
-  RedisIcon,
-  FastAPIIcon,
-  PHPIcon,
-  MySQLIcon,
-  AngularIcon,
-  LaravelIcon,
-  ExpressIcon,
-  ElectronIcon,
-  ApacheIcon,
-  FedoraIcon,
-  BootstrapIcon,
-} from "@/components/ui/icons/TechIcons";
+//Navigation Section
 
 export const NAV_ITEMS: NavItem[] = [
   { id: 'inicio', label: 'Inicio', icon: Home },
@@ -36,10 +13,13 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'skills', label: 'Habilidades', icon: Wrench },
   { id: 'proyectos', label: 'Proyectos', icon: FolderOpen },
   { id: 'experiencia', label: 'Experiencia', icon: Briefcase },
+  { id: 'contacto', label: 'Contacto', icon: Mail },
 ];
 
+//Hero Section
+
 export const HERO_ANIMATED_TEXTS = [
-  "const developer = new BackendDev();",
+  "const developer = new FullStackDev();",
   "import { Innovation } from 'creativity';",
   "console.log('Building the future...');",
   "const stack = Python + React + PostgreSQL;",
@@ -48,8 +28,122 @@ export const HERO_ANIMATED_TEXTS = [
 export const SOCIAL_LINKS: SocialLink[] = [
   { id: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/afortizdev/', label: 'LinkedIn' },
   { id: 'github', icon: Github, url: 'https://github.com/AndwSX', label: 'GitHub' },
-  { id: 'email', icon: Mail, url: 'mailto:ortiz.andw@gmail.com', label: 'Email' },
 ];
+
+//About Section
+
+export const HIGHLIGHTS = [
+  { icon: Code2, title: "Aplicaciones reales en entorno productivo" },
+  { icon: Zap, title: "APIs REST con FastAPI y Express,js" },
+  { icon: Database, title: "Gestión de Bases de Datos en producción" },
+  { icon: Settings, title: "Automatización de Workflows con IA" },
+  { icon: Rocket, title: "Integración de sistemas y servicios" },
+  { icon: Users, title: "Dashboards con métricas y KPIs" },
+];
+
+export const EDUCATION: Education[] = [
+  {
+    degree: "Tecnólogo en Análisis y Desarrollo de Software",
+    institution: "SENA | Centro de Diseño y Metrología",
+    period: "2023 - 2026",
+    description: "Enfoque en desarrollo de software y arquitectura de sistemas",
+    //status: "En formación - Etapa práctica",
+  },
+  // {
+  //   degree: "Ingeniería en Sistemas",
+  //   institution: "Universidad Tecnológica",
+  //   period: "2020 - 2024",
+  //   description: "Enfoque en desarrollo de software y arquitectura de sistemas",
+  // },
+  // {
+  //   degree: "Certificación Backend Development",
+  //   institution: "Platzi / Udemy",
+  //   period: "2023",
+  //   description:
+  //     "Node.js, APIs REST, bases de datos y arquitectura de microservicios",
+  // },
+];
+
+export const CERTIFICATES: Certificate[] = [
+  {
+    title: "Bootcamp Agentes IA: Chatbots Inteligentes",
+    institution: "Udemy",
+    year: "2025",
+    topics: ["IA", "Chatbots", "Python", "AgentsAI"]
+  },
+  {
+    title: "Aplicación de la Calidad del Software",
+    institution: "SENA",
+    year: "2025",
+    topics: ["Testing", "QA", "Buenas Prácticas"]
+  },
+  {
+    title: "Introduction to C#",
+    institution: "SoloLearn",
+    year: "2025",
+    topics: ["C#", ".NET", "POO"]
+  },
+  {
+    title: "Despliegue de Aplicaciones en Docker",
+    institution: "SENA",
+    year: "2025",
+    topics: ["Docker", "Contenedores", "DevOps"]
+  },
+  {
+    title: "Construcción de Bases de Datos con MySQL",
+    institution: "SENA",
+    year: "2024",
+    topics: ["MySQL", "Bases de Datos", "SQL"]
+  },
+  {
+    title: "Variables y Estructuras de Control en Python",
+    institution: "SENA",
+    year: "2024",
+    topics: ["Python", "Programación", "Algoritmos"]
+  },
+];
+
+//Skills Section
+
+export const SKILLS = {
+  "BACKEND (Experiencia Profesional)": [
+    { name: "Python", icon: PythonIcon, color: "207 51% 52%" },
+    { name: "FastAPI", icon: FastAPIIcon, color: "174 100% 29%" },
+    { name: "PHP", icon: PHPIcon, color: "236 29% 59%" },
+    { name: "C#", icon: CSharpIcon, color: "294 40% 38%" },
+    { name: "Node.js", icon: NodeIcon, color: "120 25% 45%" },
+    { name: "Express.js", icon: ExpressIcon, color: "0 0% 50%" },
+    { name: "Laravel", icon: LaravelIcon, color: "0 70% 50%" },
+    { name: "PostgreSQL", icon: PostgreSQLIcon, color: "211 60% 48%" },
+    { name: "MySQL", icon: MySQLIcon, color: "206 41% 45%" },
+  ],
+
+  "FRONTEND (Experiencia Profesional)": [
+    { name: "JavaScript", icon: JavaScriptIcon, color: "50 100% 50%" },
+    { name: "TypeScript", icon: TypeScriptIcon, color: "211 60% 48%" },
+    { name: "React", icon: ReactIcon, color: "193 95% 68%" },
+    { name: "Vue.js", icon: VueIcon, color: "153 47% 49%" },
+    { name: "Next.js", icon: NextJSIcon, color: "0 0% 80%" },
+    { name: "Angular", icon: AngularIcon, color: "0 100% 50%" },
+    { name: "Tailwind CSS", icon: TailwindIcon, color: "193 95% 68%" },
+    { name: "Bootstrap", icon: BootstrapIcon, color: "264 39% 51%" },
+  ],
+
+  "DEVOPS E INFRAESTRUCTURA": [
+    { name: "Docker", icon: DockerIcon, color: "201 91% 59%" },
+    { name: "Git", icon: GitIcon, color: "14 100% 57%" },
+    { name: "Linux", icon: LinuxIcon, color: "45 97% 57%" },
+    { name: "Fedora", icon: FedoraIcon, color: "206 63% 59%" },
+    { name: "Apache", icon: ApacheIcon, color: "357 72% 48%" },
+    { name: "Postman", icon: PostmanIcon, color: "17 100% 60%" },
+  ],
+
+  // "DESARROLLO DESKTOP": [
+  //   { name: "Electron", icon: ElectronIcon, color: "189 34% 42%" },
+  // ],
+};
+
+//Projects Section
 
 export const PROJECTS: Project[] = [
   {
@@ -127,161 +221,31 @@ export const PROJECTS: Project[] = [
   },  
 ];
 
-export const SKILLS = {
-  "BACKEND (Experiencia Profesional)": [
-    { name: "Python", icon: PythonIcon, color: "207 51% 52%" },
-    { name: "FastAPI", icon: FastAPIIcon, color: "174 100% 29%" },
-    { name: "PHP", icon: PHPIcon, color: "236 29% 59%" },
-    { name: "Node.js", icon: NodeIcon, color: "120 25% 45%" },
-    { name: "PostgreSQL", icon: PostgreSQLIcon, color: "211 60% 48%" },
-    { name: "MySQL", icon: MySQLIcon, color: "206 41% 45%" },
-  ],
-  "FRONTEND (Experiencia Profesional)": [
-    { name: "JavaScript", icon: JavaScriptIcon, color: "50 100% 50%" },
-    { name: "TypeScript", icon: TypeScriptIcon, color: "211 60% 48%" },
-    { name: "React", icon: ReactIcon, color: "193 95% 68%" },
-    { name: "Vue.js", icon: VueIcon, color: "153 47% 49%" },
-    { name: "Tailwind CSS", icon: TailwindIcon, color: "193 95% 68%" },
-    { name: "Bootstrap", icon: BootstrapIcon, color: "264 39% 51%" },
-  ],
-  "FRAMEWORKS Y TOOLS": [
-    { name: "Next.js", icon: NextJSIcon, color: "0 0% 80%" },
-    { name: "Angular", icon: AngularIcon, color: "0 100% 50%" },
-    { name: "Laravel", icon: LaravelIcon, color: "0 70% 50%" },
-    { name: "Express", icon: ExpressIcon, color: "0 0% 50%" },
-    { name: "Electron", icon: ElectronIcon, color: "189 34% 42%" },
-  ],
-  "DEVOPS E INFRAESTRUCTURA": [
-    { name: "Docker", icon: DockerIcon, color: "201 91% 59%" },
-    { name: "Git", icon: GitIcon, color: "14 100% 57%" },
-    { name: "Fedora", icon: FedoraIcon, color: "206 63% 59%" },
-    { name: "Apache", icon: ApacheIcon, color: "357 72% 48%" },
-  ],
-};
-
-export const HIGHLIGHTS = [
-  { icon: Code2, title: "Aplicaciones reales en entorno productivo" },
-  { icon: Zap, title: "APIs REST con FastAPI y Express" },
-  { icon: Database, title: "Gestión de PostgreSQL en producción" },
-  { icon: Settings, title: "Automatización con Python y PHP" },
-  { icon: Rocket, title: "Integración FTP y procesamiento de PDFs" },
-  { icon: Target, title: "Desarrollo de Software (Backend + Frontend)" },
-  { icon: Users, title: "Dashboards con Chart.js y DataTables" },
-];
-
-export const CERTIFICATES: Certificate[] = [
-  {
-    title: "Construcción de Bases de Datos con MySQL",
-    institution: "SENA",
-    year: "2024",
-    topics: ["MySQL", "Bases de Datos", "SQL"]
-  },
-  {
-    title: "Variables y Estructuras de Control en Python",
-    institution: "SENA",
-    year: "2024",
-    topics: ["Python", "Programación", "Algoritmos"]
-  },
-  {
-    title: "Aplicación de la Calidad del Software",
-    institution: "SENA",
-    year: "2025",
-    topics: ["Testing", "QA", "Buenas Prácticas"]
-  },
-  {
-    title: "Despliegue de Aplicaciones en Docker",
-    institution: "SENA",
-    year: "2025",
-    topics: ["Docker", "Contenedores", "DevOps"]
-  },
-  {
-    title: "Bootcamp Agentes IA: Chatbots Inteligentes",
-    institution: "Udemy",
-    year: "2025",
-    topics: ["IA", "Chatbots", "Python", "AgentsAI"]
-  },
-  {
-    title: "Introduction to C#",
-    institution: "SoloLearn",
-    year: "2025",
-    topics: ["C#", ".NET", "POO"]
-  },
-];
-
-export const EDUCATION: Education[] = [
-  {
-    degree: "Tecnólogo en Análisis y Desarrollo de Software",
-    institution: "SENA Centro de Diseño y Metrología",
-    period: "2023 - 2026",
-    description: "Enfoque en desarrollo de software y arquitectura de sistemas",
-    //status: "En formación - Etapa práctica",
-  },
-  // {
-  //   degree: "Ingeniería en Sistemas",
-  //   institution: "Universidad Tecnológica",
-  //   period: "2020 - 2024",
-  //   description: "Enfoque en desarrollo de software y arquitectura de sistemas",
-  // },
-  // {
-  //   degree: "Certificación Backend Development",
-  //   institution: "Platzi / Udemy",
-  //   period: "2023",
-  //   description:
-  //     "Node.js, APIs REST, bases de datos y arquitectura de microservicios",
-  // },
-];
+//Experience Section
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 1,
     company: 'SIMETRIC S.A.',
-    position: 'Practicante Sistemas',
+    position: 'Software Developer Jr',
     period: 'Oct - 2025 - Abr - 2026',
-    location: 'Presencial',
-    description: 'Soporte técnico y desarrollo de aplicaciones web internas. Mi rol principal es brindar soporte remoto (TeamViewer, AnyDesk) y gestión de bases de datos, desarrollando soluciones web cuando surgen necesidades específicas en las diferentes áreas de la empresa. Trabajo con múltiples tecnologías backend (Python, PHP, C#) y frontend (React, Vue.js).',
-    achievements: [
-      'Desarrollé y mantuve aplicaciones web internas, automatizando procesos críticos del negocio',
-      'Creé sistema de procesamiento automático de PDFs con integración FTP, insertando imágenes de huellas digitales dinámicamente usando Python y Paramiko',
-      'Implementé aplicación de encuestas de satisfacción con dashboard analítico usando PHP, PostgreSQL, Chart.js y Tailwind CSS',
-      'Desarrollé aplicación Electron que integra múltiples APIs (FastAPI + Express) con bases de datos PostgreSQL, usando React y Vue.js',
-      'Construí sistema de descarga de certificados con conversión HTML a PDF y manejo de Base64, optimizando la distribución de documentos',
-      'Mejoré interfaz de agendamiento empresarial con Bootstrap, aumentando la usabilidad del sistema',
-      'Participe en el desarrollo de un sistema de pausas activas obligatorias con C#, API en PHP y PostgreSQL'
-    ],
-    technologies: ['Python', 'FastAPI', 'PHP', 'C#', 'JavaScript', 'TypeScript', 'React', 'Vue.js', 'Electron', 'Express', 'Node.js', 'PostgreSQL', 'MySQL', 'Tailwind CSS', 'Bootstrap', 'Chart.js', 'DataTables', 'Docker', 'Git', 'Linux', 'FTP', 'Paramiko', 'Tkinter', 'AJAX'],
+    location: 'Bogotá, Colombia - Presencial',
+    description: 'Desempeñar y controlar funciones relacionadas con los procesos de desarrollo de software y aplicaciones web, así como brindar soporte técnico IT. Efectuar procesos de desarrollo conforme a los requerimientos del usuario final, cumpliendo con sus necesidades; presentar avances y reportes del proyecto; realizar pruebas de funcionalidad y las actualizaciones requeridas; además de apoyar labores de soporte en sistemas y software de forma presencial y remota, instalando, actualizando y ejecutando los procedimientos complementarios requeridos.',
+    achievements: 'Identifiqué y analicé oportunidades de mejora en la gestión y seguridad de la información, por lo que planteé e implementé controles de seguridad de la información, así como soluciones de desarrollo que permitieron optimizar procesos y generar mayor eficiencia en la operación.',
+    technologies: ['Python', 'FastAPI', 'PHP', 'C#', 'JavaScript', 'TypeScript', 'React', 'Vue.js', 'Electron', 'Express', 'Node.js', 'PostgreSQL', 'MySQL', 'Tailwind CSS', 'Bootstrap', 'Chart.js', 'DataTables', 'Docker', 'Git', 'Linux', 'FTP', 'Paramiko', 'Tkinter', 'AJAX', 'DBeaver', 'FileZilla', 'Postman', 'GLPI'],
     icon: Code2,
-    color: 'from-cyan-500 to-blue-500'
+    color: 'from-red-500 to-blue-500'
   },
-  // {
-  //   id: 2,
-  //   company: 'StartupLab',
-  //   position: 'Frontend Developer',
-  //   period: '2020 - 2022',
-  //   location: 'Híbrido',
-  //   description: 'Construcción de interfaces de usuario innovadoras y experiencias interactivas para productos SaaS.',
-  //   achievements: [
-  //     'Desarrollé 15+ componentes reutilizables',
-  //     'Mejoré UX basado en analytics',
-  //     'Implementé testing automatizado'
-  //   ],
-  //   technologies: ['Vue.js', 'TypeScript', 'Tailwind'],
-  //   icon: 'ri-palette-line',
-  //   color: 'from-purple-500 to-pink-500'
-  // },
-  // {
-  //   id: 3,
-  //   company: 'Digital Agency',
-  //   position: 'Junior Developer',
-  //   period: '2019 - 2020',
-  //   location: 'Presencial',
-  //   description: 'Desarrollo de sitios web y aplicaciones para clientes diversos, enfoque en performance y SEO.',
-  //   achievements: [
-  //     'Entregué 20+ proyectos exitosos',
-  //     'Optimicé SEO alcanzando top 3',
-  //     'Colaboré con equipos multidisciplinarios'
-  //   ],
-  //   technologies: ['JavaScript', 'PHP', 'WordPress'],
-  //   icon: 'ri-rocket-line',
-  //   color: 'from-green-500 to-cyan-500'
-  // }
+  {
+    id: 2,
+    company: 'AKRON D&F S.A.S.',
+    position: 'Junior Web Developer',
+    period: 'Jul - 2022 - Ago - 2023',
+    location: 'Bogotá, Colombia - Presencial',
+    description: 'Desempeñar funciones relacionadas con el desarrollo y mantenimiento de aplicaciones web, atendiendo los requerimientos y necesidades de los usuarios. Diseñar, desarrollar y actualizar soluciones web orientadas a la optimización de procesos internos, efectuar pruebas de funcionalidad, identificar y corregir errores, así como apoyar procesos de automatización y mejora de servicios tecnológicos internos.',
+    achievements: 'Identifiqué y analicé oportunidades de mejora en el proceso de control de ingresos y egresos de caja, por lo que planteé y desarrollé una solución web automatizada e intuitiva que reemplazó el registro manual, optimizando la gestión de la información, reduciendo errores operativos y mejorando la eficiencia del proceso.',
+    technologies: ['HTML', 'JavaScript', 'PHP', 'CSS', 'Bootstrap', 'MySQL', 'Trello', 'Git', 'AJAX'],
+    icon: Trees,
+    color: 'from-red-500 to-green-500'
+  },
 ];
