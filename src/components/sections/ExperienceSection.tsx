@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Briefcase, Download, Mail } from 'lucide-react';
 
 import { EXPERIENCES } from "@/lib/constants";
 import { ExperienceTimeline } from "@/components/ui/ExperienceCard";
@@ -39,65 +38,6 @@ export default function ExperienceSection() {
               onClick={() => setActiveId(activeId === experience.id ? null : experience.id)}
             />
           ))}
-        </div>
-
-        {/* Stats Section 
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          <div className="glass-strong rounded-2xl p-6 text-center group hover:border-cyan-500/50 transition-all duration-300">
-            <div className="text-3xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-              5+
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Años de experiencia</div>
-          </div>
-
-          <div className="glass-strong rounded-2xl p-6 text-center group hover:border-purple-500/50 transition-all duration-300">
-            <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-              50+
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Proyectos completados</div>
-          </div>
-
-          <div className="glass-strong rounded-2xl p-6 text-center group hover:border-green-500/50 transition-all duration-300">
-            <div className="text-3xl font-bold bg-gradient-to-r from-green-500 to-cyan-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-              15+
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Tecnologías</div>
-          </div>
-
-          <div className="glass-strong rounded-2xl p-6 text-center group hover:border-orange-500/50 transition-all duration-300">
-            <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-              100%
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Satisfacción</div>
-          </div>
-        </div>
-        */}
-
-        {/* CTA */}
-        <div id="contacto" className="mt-16 text-center">
-          <div className="glass-strong rounded-3xl p-8 md:p-12 max-w-3xl mx-auto space-y-6">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
-              <Briefcase size={30} className="text-white" />
-            </div>
-            <h3 className="text-2xl md:text-3xl font-bold font-display">¿Buscas talento?</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
-              Estoy abierto a nuevas oportunidades y colaboraciones interesantes.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center pt-4">
-              <a
-                href="/docs/CV_Andres_Ortiz_2026.pdf"
-                download
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center gap-2"
-              >
-                <Download size={16} />
-                Descargar CV
-              </a>
-              <button className="glass px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:border-cyan-500/50 flex items-center gap-2">
-                <Mail size={16} />
-                Contactar
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -12,6 +12,7 @@ const AboutSection = dynamic(() => import('@/components/sections/AboutSection'),
 const SkillsSection = dynamic(() => import('@/components/sections/SkillsSection'), { ssr: true })
 const ProjectsSection = dynamic(() => import('@/components/sections/ProjectsSection'), { ssr: true })
 const ExperienceSection = dynamic(() => import('@/components/sections/ExperienceSection'), { ssr: true })
+const ContactSection = dynamic(() => import('@/components/sections/ContactSection'), { ssr: false })
 const Footer = dynamic(() => import('@/components/layout/Footer'), { ssr: true })
 
 export default function Home() {
@@ -40,6 +41,7 @@ export default function Home() {
             <SkillsSection />
             <ProjectsSection />
             <ExperienceSection />
+            <ContactSection />
           </main>
           
           <Footer />

@@ -26,7 +26,7 @@ export interface ExperienceItem {
   period: string;
   location: string;
   description: string;
-  achievements: string[];
+  achievements: string;
   technologies: string[];
   icon: any;
   color: string;

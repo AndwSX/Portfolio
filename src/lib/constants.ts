@@ -1,36 +1,9 @@
+//types
 import { NavItem, Project, ExperienceItem, SocialLink, Certificate, Education } from './types';
-import { Zap, Target, Rocket, Code2, Database, Settings, Users, Home, User, Wrench, FolderOpen, Briefcase, Linkedin, Wallet, Github, Mail, ChartPie } from "lucide-react";
-
-import {
-  JavaScriptIcon,
-  CSharpIcon,
-  TypeScriptIcon,
-  ReactIcon,
-  VueIcon,
-  NodeIcon,
-  LinuxIcon,
-  PythonIcon,
-  TailwindIcon,
-  GitIcon,
-  DockerIcon,
-  FigmaIcon,
-  NextJSIcon,
-  PostgreSQLIcon,
-  AWSIcon,
-  MongoDBIcon,
-  GraphQLIcon,
-  RedisIcon,
-  FastAPIIcon,
-  PHPIcon,
-  MySQLIcon,
-  AngularIcon,
-  LaravelIcon,
-  ExpressIcon,
-  ElectronIcon,
-  ApacheIcon,
-  FedoraIcon,
-  BootstrapIcon,
-} from "@/components/ui/icons/TechIcons";
+//lucide-react
+import { Zap, Trees, Target, Rocket, Code2, Database, Settings, Users, Home, User, Wrench, FolderOpen, Briefcase, Linkedin, Wallet, Github, Mail, ChartPie } from "lucide-react";
+//TechIcons
+import { JavaScriptIcon, CSharpIcon, TypeScriptIcon, ReactIcon, VueIcon, NodeIcon, PostmanIcon, LinuxIcon, PythonIcon, TailwindIcon, GitIcon, DockerIcon, FigmaIcon, NextJSIcon, PostgreSQLIcon, AWSIcon, MongoDBIcon, GraphQLIcon, RedisIcon, FastAPIIcon, PHPIcon, MySQLIcon, AngularIcon, LaravelIcon, ExpressIcon, ElectronIcon, ApacheIcon, FedoraIcon, BootstrapIcon } from "@/components/ui/icons/TechIcons";
 
 //Navigation Section
 
@@ -40,6 +13,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'skills', label: 'Habilidades', icon: Wrench },
   { id: 'proyectos', label: 'Proyectos', icon: FolderOpen },
   { id: 'experiencia', label: 'Experiencia', icon: Briefcase },
+  { id: 'contacto', label: 'Contacto', icon: Mail },
 ];
 
 //Hero Section
@@ -54,7 +28,6 @@ export const HERO_ANIMATED_TEXTS = [
 export const SOCIAL_LINKS: SocialLink[] = [
   { id: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/afortizdev/', label: 'LinkedIn' },
   { id: 'github', icon: Github, url: 'https://github.com/AndwSX', label: 'GitHub' },
-  { id: 'email', icon: Mail, url: 'mailto:ortiz.andw@gmail.com', label: 'Email' },
 ];
 
 //About Section
@@ -162,6 +135,7 @@ export const SKILLS = {
     { name: "Linux", icon: LinuxIcon, color: "45 97% 57%" },
     { name: "Fedora", icon: FedoraIcon, color: "206 63% 59%" },
     { name: "Apache", icon: ApacheIcon, color: "357 72% 48%" },
+    { name: "Postman", icon: PostmanIcon, color: "17 100% 60%" },
   ],
 
   // "DESARROLLO DESKTOP": [
@@ -247,61 +221,31 @@ export const PROJECTS: Project[] = [
   },  
 ];
 
-
-
-
+//Experience Section
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 1,
     company: 'SIMETRIC S.A.',
-    position: 'Practicante Sistemas',
+    position: 'Software Developer Jr',
     period: 'Oct - 2025 - Abr - 2026',
-    location: 'Presencial',
-    description: 'Soporte técnico y desarrollo de aplicaciones web internas. Mi rol principal es brindar soporte remoto (TeamViewer, AnyDesk) y gestión de bases de datos, desarrollando soluciones web cuando surgen necesidades específicas en las diferentes áreas de la empresa. Trabajo con múltiples tecnologías backend (Python, PHP, C#) y frontend (React, Vue.js).',
-    achievements: [
-      'Desarrollé y mantuve aplicaciones web internas, automatizando procesos críticos del negocio',
-      'Creé sistema de procesamiento automático de PDFs con integración FTP, insertando imágenes de huellas digitales dinámicamente usando Python y Paramiko',
-      'Implementé aplicación de encuestas de satisfacción con dashboard analítico usando PHP, PostgreSQL, Chart.js y Tailwind CSS',
-      'Desarrollé aplicación Electron que integra múltiples APIs (FastAPI + Express) con bases de datos PostgreSQL, usando React y Vue.js',
-      'Construí sistema de descarga de certificados con conversión HTML a PDF y manejo de Base64, optimizando la distribución de documentos',
-      'Mejoré interfaz de agendamiento empresarial con Bootstrap, aumentando la usabilidad del sistema',
-      'Participe en el desarrollo de un sistema de pausas activas obligatorias con C#, API en PHP y PostgreSQL'
-    ],
-    technologies: ['Python', 'FastAPI', 'PHP', 'C#', 'JavaScript', 'TypeScript', 'React', 'Vue.js', 'Electron', 'Express', 'Node.js', 'PostgreSQL', 'MySQL', 'Tailwind CSS', 'Bootstrap', 'Chart.js', 'DataTables', 'Docker', 'Git', 'Linux', 'FTP', 'Paramiko', 'Tkinter', 'AJAX'],
+    location: 'Bogotá, Colombia - Presencial',
+    description: 'Desempeñar y controlar funciones relacionadas con los procesos de desarrollo de software y aplicaciones web, así como brindar soporte técnico IT. Efectuar procesos de desarrollo conforme a los requerimientos del usuario final, cumpliendo con sus necesidades; presentar avances y reportes del proyecto; realizar pruebas de funcionalidad y las actualizaciones requeridas; además de apoyar labores de soporte en sistemas y software de forma presencial y remota, instalando, actualizando y ejecutando los procedimientos complementarios requeridos.',
+    achievements: 'Identifiqué y analicé oportunidades de mejora en la gestión y seguridad de la información, por lo que planteé e implementé controles de seguridad de la información, así como soluciones de desarrollo que permitieron optimizar procesos y generar mayor eficiencia en la operación.',
+    technologies: ['Python', 'FastAPI', 'PHP', 'C#', 'JavaScript', 'TypeScript', 'React', 'Vue.js', 'Electron', 'Express', 'Node.js', 'PostgreSQL', 'MySQL', 'Tailwind CSS', 'Bootstrap', 'Chart.js', 'DataTables', 'Docker', 'Git', 'Linux', 'FTP', 'Paramiko', 'Tkinter', 'AJAX', 'DBeaver', 'FileZilla', 'Postman', 'GLPI'],
     icon: Code2,
-    color: 'from-cyan-500 to-blue-500'
+    color: 'from-red-500 to-blue-500'
   },
-  // {
-  //   id: 2,
-  //   company: 'StartupLab',
-  //   position: 'Frontend Developer',
-  //   period: '2020 - 2022',
-  //   location: 'Híbrido',
-  //   description: 'Construcción de interfaces de usuario innovadoras y experiencias interactivas para productos SaaS.',
-  //   achievements: [
-  //     'Desarrollé 15+ componentes reutilizables',
-  //     'Mejoré UX basado en analytics',
-  //     'Implementé testing automatizado'
-  //   ],
-  //   technologies: ['Vue.js', 'TypeScript', 'Tailwind'],
-  //   icon: 'ri-palette-line',
-  //   color: 'from-purple-500 to-pink-500'
-  // },
-  // {
-  //   id: 3,
-  //   company: 'Digital Agency',
-  //   position: 'Junior Developer',
-  //   period: '2019 - 2020',
-  //   location: 'Presencial',
-  //   description: 'Desarrollo de sitios web y aplicaciones para clientes diversos, enfoque en performance y SEO.',
-  //   achievements: [
-  //     'Entregué 20+ proyectos exitosos',
-  //     'Optimicé SEO alcanzando top 3',
-  //     'Colaboré con equipos multidisciplinarios'
-  //   ],
-  //   technologies: ['JavaScript', 'PHP', 'WordPress'],
-  //   icon: 'ri-rocket-line',
-  //   color: 'from-green-500 to-cyan-500'
-  // }
+  {
+    id: 2,
+    company: 'AKRON D&F S.A.S.',
+    position: 'Junior Web Developer',
+    period: 'Jul - 2022 - Ago - 2023',
+    location: 'Bogotá, Colombia - Presencial',
+    description: 'Desempeñar funciones relacionadas con el desarrollo y mantenimiento de aplicaciones web, atendiendo los requerimientos y necesidades de los usuarios. Diseñar, desarrollar y actualizar soluciones web orientadas a la optimización de procesos internos, efectuar pruebas de funcionalidad, identificar y corregir errores, así como apoyar procesos de automatización y mejora de servicios tecnológicos internos.',
+    achievements: 'Identifiqué y analicé oportunidades de mejora en el proceso de control de ingresos y egresos de caja, por lo que planteé y desarrollé una solución web automatizada e intuitiva que reemplazó el registro manual, optimizando la gestión de la información, reduciendo errores operativos y mejorando la eficiencia del proceso.',
+    technologies: ['HTML', 'JavaScript', 'PHP', 'CSS', 'Bootstrap', 'MySQL', 'Trello', 'Git', 'AJAX'],
+    icon: Trees,
+    color: 'from-red-500 to-green-500'
+  },
 ];
