@@ -30,7 +30,7 @@ export default function SkillsSection() {
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  Tecnologías y herramientas que domino para desarrollar aplicaciones web completas, desde el backend hasta el frontend.
+                  Stack tecnológico utilizado en el desarrollo de soluciones de software.
                 </p>
               </div>
 

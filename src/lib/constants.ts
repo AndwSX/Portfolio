@@ -3,10 +3,12 @@ import { Zap, Target, Rocket, Code2, Database, Settings, Users, Home, User, Wren
 
 import {
   JavaScriptIcon,
+  CSharpIcon,
   TypeScriptIcon,
   ReactIcon,
   VueIcon,
   NodeIcon,
+  LinuxIcon,
   PythonIcon,
   TailwindIcon,
   GitIcon,
@@ -128,6 +130,47 @@ export const CERTIFICATES: Certificate[] = [
   },
 ];
 
+//Skills Section
+
+export const SKILLS = {
+  "BACKEND (Experiencia Profesional)": [
+    { name: "Python", icon: PythonIcon, color: "207 51% 52%" },
+    { name: "FastAPI", icon: FastAPIIcon, color: "174 100% 29%" },
+    { name: "PHP", icon: PHPIcon, color: "236 29% 59%" },
+    { name: "C#", icon: CSharpIcon, color: "294 40% 38%" },
+    { name: "Node.js", icon: NodeIcon, color: "120 25% 45%" },
+    { name: "Express.js", icon: ExpressIcon, color: "0 0% 50%" },
+    { name: "Laravel", icon: LaravelIcon, color: "0 70% 50%" },
+    { name: "PostgreSQL", icon: PostgreSQLIcon, color: "211 60% 48%" },
+    { name: "MySQL", icon: MySQLIcon, color: "206 41% 45%" },
+  ],
+
+  "FRONTEND (Experiencia Profesional)": [
+    { name: "JavaScript", icon: JavaScriptIcon, color: "50 100% 50%" },
+    { name: "TypeScript", icon: TypeScriptIcon, color: "211 60% 48%" },
+    { name: "React", icon: ReactIcon, color: "193 95% 68%" },
+    { name: "Vue.js", icon: VueIcon, color: "153 47% 49%" },
+    { name: "Next.js", icon: NextJSIcon, color: "0 0% 80%" },
+    { name: "Angular", icon: AngularIcon, color: "0 100% 50%" },
+    { name: "Tailwind CSS", icon: TailwindIcon, color: "193 95% 68%" },
+    { name: "Bootstrap", icon: BootstrapIcon, color: "264 39% 51%" },
+  ],
+
+  "DEVOPS E INFRAESTRUCTURA": [
+    { name: "Docker", icon: DockerIcon, color: "201 91% 59%" },
+    { name: "Git", icon: GitIcon, color: "14 100% 57%" },
+    { name: "Linux", icon: LinuxIcon, color: "45 97% 57%" },
+    { name: "Fedora", icon: FedoraIcon, color: "206 63% 59%" },
+    { name: "Apache", icon: ApacheIcon, color: "357 72% 48%" },
+  ],
+
+  // "DESARROLLO DESKTOP": [
+  //   { name: "Electron", icon: ElectronIcon, color: "189 34% 42%" },
+  // ],
+};
+
+//Projects Section
+
 export const PROJECTS: Project[] = [
   {
     id: 1,
@@ -204,37 +247,6 @@ export const PROJECTS: Project[] = [
   },  
 ];
 
-export const SKILLS = {
-  "BACKEND (Experiencia Profesional)": [
-    { name: "Python", icon: PythonIcon, color: "207 51% 52%" },
-    { name: "FastAPI", icon: FastAPIIcon, color: "174 100% 29%" },
-    { name: "PHP", icon: PHPIcon, color: "236 29% 59%" },
-    { name: "Node.js", icon: NodeIcon, color: "120 25% 45%" },
-    { name: "PostgreSQL", icon: PostgreSQLIcon, color: "211 60% 48%" },
-    { name: "MySQL", icon: MySQLIcon, color: "206 41% 45%" },
-  ],
-  "FRONTEND (Experiencia Profesional)": [
-    { name: "JavaScript", icon: JavaScriptIcon, color: "50 100% 50%" },
-    { name: "TypeScript", icon: TypeScriptIcon, color: "211 60% 48%" },
-    { name: "React", icon: ReactIcon, color: "193 95% 68%" },
-    { name: "Vue.js", icon: VueIcon, color: "153 47% 49%" },
-    { name: "Tailwind CSS", icon: TailwindIcon, color: "193 95% 68%" },
-    { name: "Bootstrap", icon: BootstrapIcon, color: "264 39% 51%" },
-  ],
-  "FRAMEWORKS Y TOOLS": [
-    { name: "Next.js", icon: NextJSIcon, color: "0 0% 80%" },
-    { name: "Angular", icon: AngularIcon, color: "0 100% 50%" },
-    { name: "Laravel", icon: LaravelIcon, color: "0 70% 50%" },
-    { name: "Express", icon: ExpressIcon, color: "0 0% 50%" },
-    { name: "Electron", icon: ElectronIcon, color: "189 34% 42%" },
-  ],
-  "DEVOPS E INFRAESTRUCTURA": [
-    { name: "Docker", icon: DockerIcon, color: "201 91% 59%" },
-    { name: "Git", icon: GitIcon, color: "14 100% 57%" },
-    { name: "Fedora", icon: FedoraIcon, color: "206 63% 59%" },
-    { name: "Apache", icon: ApacheIcon, color: "357 72% 48%" },
-  ],
-};
 
 
 
