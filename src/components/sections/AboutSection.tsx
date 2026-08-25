@@ -44,7 +44,7 @@ export default function AboutSection() {
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3">Andrés Ortiz</h3>
+                  <h3 className="text-2xl font-semibold mb-3">Andrés Ortiz<span className="text-gray-400 dark:text-gray-600"> | Bogotá, Colombia</span></h3>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                     Tecnólogo en Análisis y Desarrollo de Software con formación complementaria en Calidad del Software 
                     y Desarrollo Full Stack. Cuento con experiencia profesional participando en el ciclo completo de desarrollo, 

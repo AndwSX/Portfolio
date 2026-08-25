@@ -11,7 +11,7 @@ export default function SkillsSection() {
     <section
       ref={targetRef}
       id="skills"
-      className={`min-h-screen flex items-center justify-center px-4 py-80 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
+      className={`min-h-screen flex items-center justify-center px-4 py-24 transition-all duration-700 ${isIntersecting ? 'section-visible' : 'section-hidden'
         }`}
     >
       <div className="container max-w-7xl mx-auto">

@@ -30,6 +30,8 @@ import {
   BootstrapIcon,
 } from "@/components/ui/icons/TechIcons";
 
+//Navigation Section
+
 export const NAV_ITEMS: NavItem[] = [
   { id: 'inicio', label: 'Inicio', icon: Home },
   { id: 'acerca', label: 'Acerca', icon: User },
@@ -37,6 +39,8 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'proyectos', label: 'Proyectos', icon: FolderOpen },
   { id: 'experiencia', label: 'Experiencia', icon: Briefcase },
 ];
+
+//Hero Section
 
 export const HERO_ANIMATED_TEXTS = [
   "const developer = new FullStackDev();",
@@ -49,6 +53,79 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { id: 'linkedin', icon: Linkedin, url: 'https://www.linkedin.com/in/afortizdev/', label: 'LinkedIn' },
   { id: 'github', icon: Github, url: 'https://github.com/AndwSX', label: 'GitHub' },
   { id: 'email', icon: Mail, url: 'mailto:ortiz.andw@gmail.com', label: 'Email' },
+];
+
+//About Section
+
+export const HIGHLIGHTS = [
+  { icon: Code2, title: "Aplicaciones reales en entorno productivo" },
+  { icon: Zap, title: "APIs REST con FastAPI y Express,js" },
+  { icon: Database, title: "Gestión de Bases de Datos en producción" },
+  { icon: Settings, title: "Automatización de Workflows con IA" },
+  { icon: Rocket, title: "Integración de sistemas y servicios" },
+  { icon: Users, title: "Dashboards con métricas y KPIs" },
+];
+
+export const EDUCATION: Education[] = [
+  {
+    degree: "Tecnólogo en Análisis y Desarrollo de Software",
+    institution: "SENA | Centro de Diseño y Metrología",
+    period: "2023 - 2026",
+    description: "Enfoque en desarrollo de software y arquitectura de sistemas",
+    //status: "En formación - Etapa práctica",
+  },
+  // {
+  //   degree: "Ingeniería en Sistemas",
+  //   institution: "Universidad Tecnológica",
+  //   period: "2020 - 2024",
+  //   description: "Enfoque en desarrollo de software y arquitectura de sistemas",
+  // },
+  // {
+  //   degree: "Certificación Backend Development",
+  //   institution: "Platzi / Udemy",
+  //   period: "2023",
+  //   description:
+  //     "Node.js, APIs REST, bases de datos y arquitectura de microservicios",
+  // },
+];
+
+export const CERTIFICATES: Certificate[] = [
+  {
+    title: "Bootcamp Agentes IA: Chatbots Inteligentes",
+    institution: "Udemy",
+    year: "2025",
+    topics: ["IA", "Chatbots", "Python", "AgentsAI"]
+  },
+  {
+    title: "Aplicación de la Calidad del Software",
+    institution: "SENA",
+    year: "2025",
+    topics: ["Testing", "QA", "Buenas Prácticas"]
+  },
+  {
+    title: "Introduction to C#",
+    institution: "SoloLearn",
+    year: "2025",
+    topics: ["C#", ".NET", "POO"]
+  },
+  {
+    title: "Despliegue de Aplicaciones en Docker",
+    institution: "SENA",
+    year: "2025",
+    topics: ["Docker", "Contenedores", "DevOps"]
+  },
+  {
+    title: "Construcción de Bases de Datos con MySQL",
+    institution: "SENA",
+    year: "2024",
+    topics: ["MySQL", "Bases de Datos", "SQL"]
+  },
+  {
+    title: "Variables y Estructuras de Control en Python",
+    institution: "SENA",
+    year: "2024",
+    topics: ["Python", "Programación", "Algoritmos"]
+  },
 ];
 
 export const PROJECTS: Project[] = [
@@ -159,77 +236,8 @@ export const SKILLS = {
   ],
 };
 
-export const HIGHLIGHTS = [
-  { icon: Code2, title: "Aplicaciones reales en entorno productivo" },
-  { icon: Zap, title: "APIs REST con FastAPI y Express" },
-  { icon: Database, title: "Gestión de PostgreSQL en producción" },
-  { icon: Settings, title: "Automatización con Python y PHP" },
-  { icon: Rocket, title: "Integración FTP y procesamiento de PDFs" },
-  { icon: Target, title: "Desarrollo de Software (Backend + Frontend)" },
-  { icon: Users, title: "Dashboards con Chart.js y DataTables" },
-];
 
-export const CERTIFICATES: Certificate[] = [
-  {
-    title: "Construcción de Bases de Datos con MySQL",
-    institution: "SENA",
-    year: "2024",
-    topics: ["MySQL", "Bases de Datos", "SQL"]
-  },
-  {
-    title: "Variables y Estructuras de Control en Python",
-    institution: "SENA",
-    year: "2024",
-    topics: ["Python", "Programación", "Algoritmos"]
-  },
-  {
-    title: "Aplicación de la Calidad del Software",
-    institution: "SENA",
-    year: "2025",
-    topics: ["Testing", "QA", "Buenas Prácticas"]
-  },
-  {
-    title: "Despliegue de Aplicaciones en Docker",
-    institution: "SENA",
-    year: "2025",
-    topics: ["Docker", "Contenedores", "DevOps"]
-  },
-  {
-    title: "Bootcamp Agentes IA: Chatbots Inteligentes",
-    institution: "Udemy",
-    year: "2025",
-    topics: ["IA", "Chatbots", "Python", "AgentsAI"]
-  },
-  {
-    title: "Introduction to C#",
-    institution: "SoloLearn",
-    year: "2025",
-    topics: ["C#", ".NET", "POO"]
-  },
-];
 
-export const EDUCATION: Education[] = [
-  {
-    degree: "Tecnólogo en Análisis y Desarrollo de Software",
-    institution: "SENA Centro de Diseño y Metrología",
-    period: "2023 - 2026",
-    description: "Enfoque en desarrollo de software y arquitectura de sistemas",
-    //status: "En formación - Etapa práctica",
-  },
-  // {
-  //   degree: "Ingeniería en Sistemas",
-  //   institution: "Universidad Tecnológica",
-  //   period: "2020 - 2024",
-  //   description: "Enfoque en desarrollo de software y arquitectura de sistemas",
-  // },
-  // {
-  //   degree: "Certificación Backend Development",
-  //   institution: "Platzi / Udemy",
-  //   period: "2023",
-  //   description:
-  //     "Node.js, APIs REST, bases de datos y arquitectura de microservicios",
-  // },
-];
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
